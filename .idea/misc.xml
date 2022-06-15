@@ -160,6 +160,7 @@
         <entry key="..\:/StoryApp-master/app/src/main/res/layout/item_author_section.xml" value="0.17864583333333334" />
         <entry key="..\:/StoryApp-master/app/src/main/res/layout/native_ad_layout.xml" value="0.17864583333333334" />
         <entry key="..\:/StoryApp-master/app/src/main/res/layout/slider_adapter.xml" value="0.17864583333333334" />
+        <entry key="..\:/StoryApp/app/src/main/res/drawable/ic_arrow_right.xml" value="0.195097037793667" />
         <entry key="..\:/StoryApp/app/src/main/res/drawable/ic_back.xml" value="0.19895833333333332" />
         <entry key="..\:/StoryApp/app/src/main/res/drawable/ic_book_download.xml" value="0.19166666666666668" />
         <entry key="..\:/StoryApp/app/src/main/res/drawable/round_corners_bg.xml" value="0.19895833333333332" />
@@ -219,7 +220,7 @@
         <entry key="..\:/StoryApp/app/src/main/res/layout/no_data_found.xml" value="0.17864583333333334" />
         <entry key="..\:/StoryApp/app/src/main/res/layout/profile_fragment.xml" value="0.22" />
         <entry key="..\:/StoryApp/app/src/main/res/layout/search_adapter.xml" value="0.17864583333333334" />
-        <entry key="..\:/StoryApp/app/src/main/res/layout/setting_fragment.xml" value="0.16" />
+        <entry key="..\:/StoryApp/app/src/main/res/layout/setting_fragment.xml" value="0.25" />
         <entry key="..\:/StoryApp/app/src/main/res/layout/slider_adapter.xml" value="0.21" />
         <entry key="..\:/StoryApp/app/src/main/res/layout/slider_external_adapter.xml" value="0.17864583333333334" />
         <entry key="..\:/StoryApp/app/src/main/res/menu/bottom_menu.xml" value="0.17864583333333334" />
