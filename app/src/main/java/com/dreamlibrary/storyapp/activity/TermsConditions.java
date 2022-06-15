@@ -60,6 +60,7 @@ public class TermsConditions extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_back_right_align);
 
         progressBar = findViewById(R.id.progressBar_terms);
         conNoData = findViewById(R.id.con_noDataFound);

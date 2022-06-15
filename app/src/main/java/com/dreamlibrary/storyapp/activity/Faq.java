@@ -58,6 +58,7 @@ public class Faq extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_back_right_align);
 
         webView = findViewById(R.id.webView_faq);
         progressBar = findViewById(R.id.progressBar_faq);

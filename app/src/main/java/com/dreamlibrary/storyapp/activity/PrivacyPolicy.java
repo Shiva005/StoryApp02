@@ -58,6 +58,7 @@ public class PrivacyPolicy extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_back_right_align);
 
         conNoData = findViewById(R.id.con_noDataFound);
         webView = findViewById(R.id.webView_pp);

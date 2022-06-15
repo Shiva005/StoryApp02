@@ -13,6 +13,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
+import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textview.MaterialTextView;
@@ -46,6 +47,7 @@ public class Login extends AppCompatActivity {
     private SmoothCheckBox checkBox;
     private TextInputEditText editTextEmail, editTextPassword;
     private InputMethodManager imm;
+    private MaterialToolbar toolbar;
 
     @Override
     protected void attachBaseContext(Context newBase) {
@@ -56,6 +58,15 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        toolbar = findViewById(R.id.toolbar_login);
+        toolbar.setTitle(getResources().getString(R.string.login));
+        setSupportActionBar(toolbar);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+            getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_back_right_align);
+        }
 
         method = new Method(Login.this);
         method.forceRTLIfSupported();
@@ -70,7 +81,6 @@ public class Login extends AppCompatActivity {
         editTextPassword = findViewById(R.id.editText_password_login);
 
         MaterialButton buttonLogin = findViewById(R.id.button_login);
-        ImageView ivSkip = findViewById(R.id.iv_skip_login);
         MaterialTextView textViewSignUp = findViewById(R.id.textView_signUp_login);
         MaterialTextView textViewFp = findViewById(R.id.textView_fp_login);
         ImageView welcomeBack = findViewById(R.id.iv_welcome_back);
@@ -108,9 +118,6 @@ public class Login extends AppCompatActivity {
             startActivity(new Intent(Login.this, Register.class));
         });
 
-        ivSkip.setOnClickListener(v -> {
-            super.onBackPressed();
-        });
 
         textViewFp.setOnClickListener(v -> {
             Method.loginBack = false;

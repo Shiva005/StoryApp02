@@ -58,6 +58,7 @@ public class ForgetPassword extends AppCompatActivity {
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setDisplayShowHomeEnabled(true);
+            getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_back_right_align);
         }
 
         editText = findViewById(R.id.editText_fp);

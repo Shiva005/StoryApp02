@@ -91,6 +91,7 @@ public class AllComment extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_back_right_align);
 
         commentLists = new ArrayList<>();
 

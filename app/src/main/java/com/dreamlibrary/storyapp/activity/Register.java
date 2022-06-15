@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.checkbox.MaterialCheckBox;
 import com.google.android.material.textfield.TextInputEditText;
@@ -38,6 +39,7 @@ public class Register extends AppCompatActivity {
     private InputMethodManager imm;
     private MaterialCheckBox checkBox;
     private TextInputEditText editTextName, editTextEmail, editTextPassword, editTextConformPassword, editTextPhoneNo;
+    private MaterialToolbar toolbar;
 
     @Override
     protected void attachBaseContext(Context newBase) {
@@ -48,6 +50,15 @@ public class Register extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+
+        toolbar = findViewById(R.id.toolbar_regsiter);
+        toolbar.setTitle(getResources().getString(R.string.register));
+        setSupportActionBar(toolbar);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+            getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_back_right_align);
+        }
 
         method = new Method(Register.this);
         method.forceRTLIfSupported();
@@ -64,16 +75,11 @@ public class Register extends AppCompatActivity {
         MaterialButton buttonSubmit = findViewById(R.id.button_submit);
         MaterialTextView textViewLogin = findViewById(R.id.textView_login_register);
         MaterialTextView textViewTerms = findViewById(R.id.textView_terms_register);
-        ImageView backPressed = findViewById(R.id.iv_backPress);
         checkBox = findViewById(R.id.checkbox_register);
 
         textViewTerms.setOnClickListener(v -> startActivity(new Intent(Register.this, TermsConditions.class)));
 
         textViewLogin.setOnClickListener(v -> {
-            super.onBackPressed();
-        });
-
-        backPressed.setOnClickListener(v -> {
             super.onBackPressed();
         });
 

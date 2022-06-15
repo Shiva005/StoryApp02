@@ -179,6 +179,7 @@ public class BookDetail extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_back_right_align);
 
         conMain = findViewById(R.id.con_main_bookDetail);
         conNoData = findViewById(R.id.con_noDataFound);

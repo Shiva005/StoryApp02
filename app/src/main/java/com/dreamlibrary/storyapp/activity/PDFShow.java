@@ -77,6 +77,7 @@ public class PDFShow extends AppCompatActivity implements OnPageChangeListener, 
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_back_right_align);
 
         LinearLayout linearLayout = findViewById(R.id.linearLayout_pdfView);
         BannerAds.showBannerAds(PDFShow.this, linearLayout);
