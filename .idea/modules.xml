@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/StoryApp.iml" filepath="$PROJECT_DIR$/.idea/modules/StoryApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/SmoothCheckBox-master/StoryApp.SmoothCheckBox-master.iml" filepath="$PROJECT_DIR$/.idea/modules/SmoothCheckBox-master/StoryApp.SmoothCheckBox-master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/StoryApp.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/StoryApp.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/expandabletextview/StoryApp.expandabletextview.iml" filepath="$PROJECT_DIR$/.idea/modules/expandabletextview/StoryApp.expandabletextview.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/folioreader/StoryApp.folioreader.iml" filepath="$PROJECT_DIR$/.idea/modules/folioreader/StoryApp.folioreader.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/nativetemplates/StoryApp.nativetemplates.iml" filepath="$PROJECT_DIR$/.idea/modules/nativetemplates/StoryApp.nativetemplates.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/rating-view/StoryApp.rating-view.iml" filepath="$PROJECT_DIR$/.idea/modules/rating-view/StoryApp.rating-view.iml" />
+    </modules>
+  </component>
+</project>

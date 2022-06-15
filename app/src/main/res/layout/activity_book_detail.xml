@@ -1,0 +1,613 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ll_main_bookDetail"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:backgroundTint="@color/bg_one_download_adapter"
+    android:orientation="vertical"
+    tools:context=".activity.BookDetail">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar_bookDetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/toolbar"
+        android:textStyle="bold"
+        android:theme="@style/AppTheme.AppBarOverlay" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollView_bookDetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:id="@+id/con_main_bookDetail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="15dp"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="15dp"
+                                android:orientation="vertical">
+
+                                <com.google.android.material.card.MaterialCardView
+                                    android:id="@+id/cardView_image_bookDetail"
+                                    android:layout_width="100dp"
+                                    android:layout_height="140dp"
+                                    app:cardCornerRadius="10dp"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent">
+
+                                    <ImageView
+                                        android:id="@+id/imageView_book_bookDetail"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:contentDescription="@string/app_name"
+                                        android:scaleType="fitXY"
+                                        android:src="@drawable/placeholder_portable" />
+
+                                </com.google.android.material.card.MaterialCardView>
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    android:id="@+id/text_readingStatus"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginVertical="5dp"
+                                    android:background="@drawable/read_now_background"
+                                    android:backgroundTint="@color/email_background"
+                                    android:gravity="center"
+                                    android:paddingHorizontal="10dp"
+                                    android:paddingBottom="2dp"
+                                    android:text="Ongoing"
+                                    android:textColor="@color/white"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginVertical="10dp"
+                                android:orientation="vertical">
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    android:id="@+id/textView_bookName_bookDetail"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginHorizontal="10dp"
+                                    android:text="@string/app_name"
+                                    android:textColor="#A86E9A"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold" />
+
+                                <LinearLayout
+                                    android:id="@+id/ll_author_bookDetail"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginHorizontal="10dp"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:gravity="center_vertical"
+                                    android:orientation="horizontal">
+
+                                    <com.google.android.material.textview.MaterialTextView
+                                        android:id="@+id/textView_authorName_bookDetail"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginHorizontal="3dp"
+                                        android:gravity="center"
+                                        android:text="@string/app_name"
+                                        android:textColor="@color/textView_home"
+                                        android:textSize="14sp" />
+
+                                    <ImageView
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
+                                        android:src="@drawable/ic_check_outline"
+                                        app:tint="@color/highlight_pink" />
+                                </LinearLayout>
+
+                                <View
+                                    android:id="@+id/view_edit_pro"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"
+                                    android:layout_marginHorizontal="10dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:background="@color/check_box" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginHorizontal="10dp"
+                                    android:gravity="center_vertical"
+                                    android:orientation="horizontal">
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:gravity="center"
+                                        android:orientation="vertical"
+                                        android:paddingStart="5dp"
+                                        android:paddingEnd="5dp">
+
+                                        <com.google.android.material.textview.MaterialTextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Views"
+                                            android:textColor="@color/textView_home"
+                                            android:textSize="14sp" />
+
+                                        <com.google.android.material.textview.MaterialTextView
+                                            android:id="@+id/textView_view_bookDetail"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:ellipsize="end"
+                                            android:text="1K"
+                                            android:textColor="@color/textView_home"
+                                            android:textSize="18sp"
+                                            android:textStyle="bold" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:id="@+id/ratingLayout"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:orientation="vertical">
+
+                                        <com.google.android.material.textview.MaterialTextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Score"
+                                            android:textColor="@color/textView_home"
+                                            android:textSize="14sp" />
+
+                                        <com.google.android.material.textview.MaterialTextView
+                                            android:id="@+id/textView_ratingCount_bookDetail"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="@string/number"
+                                            android:textColor="@color/textView_home"
+                                            android:textSize="18sp"
+                                            android:textStyle="bold" />
+                                    </LinearLayout>
+
+
+                                </LinearLayout>
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/headerView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginBottom="10dp"
+                            android:visibility="gone">
+
+                            <ImageView
+                                android:id="@+id/imageView_bookDetail"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:contentDescription="@string/app_name"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/placeholder_landscape"
+                                android:visibility="gone" />
+
+                            <View
+                                android:id="@+id/blackView"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:layout_alignParentTop="true"
+                                android:layout_alignParentRight="true"
+                                android:layout_alignParentBottom="true"
+                                android:background="@drawable/image_text_bg_book_detail"
+                                android:visibility="gone" />
+
+                        </RelativeLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/text_desTitle_bookDetail"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="15dp"
+                                android:text="@string/description"
+                                android:textColor="@color/textView_bookDetail"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                            <include
+                                layout="@layout/no_data_found"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginEnd="10dp" />
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="10dp">
+
+                                <WebView
+                                    android:id="@+id/webView_bookDetail"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    tools:ignore="WebViewLayout" />
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    android:id="@+id/textView_seeMore"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="end"
+                                    android:layout_marginBottom="21dp"
+                                    android:text="More"
+                                    android:textColor="@color/red"
+                                    android:textStyle="bold"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <LinearLayout
+                                android:id="@+id/container_tags"
+                                android:layout_marginStart="10dp"
+                                android:gravity="center"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="35dp"
+                                    android:layout_height="35dp"
+                                    android:src="@drawable/hashtag"/>
+
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:id="@+id/recyclerView_tag_bookDetail"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content" />
+                            </LinearLayout>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/con_commentList_bookDetail"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    android:id="@+id/textView_commentTitle_bookDetail"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginBottom="5dp"
+                                    android:text="@string/comments"
+                                    android:textColor="@color/textView_bookDetail"
+                                    android:textSize="18sp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <View
+                                    android:id="@+id/view_comment_bookDetail"
+                                    android:layout_width="35dp"
+                                    android:layout_height="2dp"
+                                    android:layout_marginTop="2dp"
+                                    android:background="@color/textView_app_color"
+                                    android:visibility="gone"
+                                    app:layout_constraintEnd_toEndOf="@+id/textView_commentTitle_bookDetail"
+                                    app:layout_constraintHorizontal_bias="0.0"
+                                    app:layout_constraintStart_toStartOf="@+id/textView_commentTitle_bookDetail"
+                                    app:layout_constraintTop_toBottomOf="@+id/textView_commentTitle_bookDetail" />
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    android:id="@+id/textView_comment_bookDetail"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_marginEnd="10dp"
+                                    android:gravity="center"
+                                    android:text="@string/view_all"
+                                    android:textAllCaps="false"
+                                    android:textColor="@color/textView_app_color"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintBottom_toBottomOf="@+id/view_comment_bookDetail"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="@+id/textView_commentTitle_bookDetail" />
+
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:id="@+id/recyclerView_comment_bookDetail"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/textView_commentTitle_bookDetail" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="5dp"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
+                                <com.google.android.material.card.MaterialCardView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginVertical="5dp"
+                                    android:layout_marginStart="5dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:layout_weight="1"
+                                    app:cardCornerRadius="30dp">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+
+                                        <de.hdodenhof.circleimageview.CircleImageView
+                                            android:id="@+id/imageView_commentPro_bookDetail"
+                                            android:layout_width="45dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:layout_marginStart="10dp"
+                                            android:src="@drawable/profile"
+                                            android:visibility="gone"
+                                            app:civ_border_color="@color/userComment_border_bookDetail"
+                                            app:civ_border_width="2dp" />
+
+                                        <com.google.android.material.textfield.TextInputEditText
+                                            android:id="@+id/editText_comment_bookDetail"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:hint="@string/leave_your_comment"
+                                            android:paddingHorizontal="20dp"
+                                            android:paddingVertical="10dp"
+                                            android:textColor="@color/editText_comment_bookDetail"
+                                            android:textColorHint="@color/editText_comment_bookDetail"
+                                            android:textSize="14sp"
+                                            android:theme="@style/editText_style" />
+
+                                    </LinearLayout>
+
+                                </com.google.android.material.card.MaterialCardView>
+
+                                <ImageView
+                                    android:id="@+id/imageView_comment_bookDetail"
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:contentDescription="@string/app_name"
+                                    android:src="@drawable/ic_comment" />
+
+                            </LinearLayout>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/con_related_bookDetail"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <View
+                                    android:id="@+id/view_related_bookDetail"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"
+                                    android:layout_marginTop="12dp"
+                                    android:background="@color/view_bookDetail"
+                                    android:visibility="gone"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <View
+                                    android:id="@+id/view_main_related_bookDetail"
+                                    android:layout_width="3dp"
+                                    android:layout_height="0dp"
+                                    android:layout_alignParentStart="true"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginStart="10dp"
+                                    android:background="@drawable/home_line"
+                                    android:visibility="invisible"
+                                    app:layout_constraintBottom_toBottomOf="@+id/textView_related_subTitle_bookDetail"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="@+id/textView_related_title_bookDetail" />
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    android:id="@+id/textView_related_title_bookDetail"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:ellipsize="end"
+                                    android:maxLines="1"
+                                    android:text="@string/related_books"
+                                    android:textColor="@color/textView_bookDetail"
+                                    android:textSize="18sp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintStart_toEndOf="@+id/view_main_related_bookDetail"
+                                    app:layout_constraintTop_toBottomOf="@+id/view_related_bookDetail" />
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    android:id="@+id/textView_related_subTitle_bookDetail"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:ellipsize="end"
+                                    android:maxLines="1"
+                                    android:paddingBottom="5dp"
+                                    android:text="@string/stories_youVe_related_read_books"
+                                    android:textColor="@color/textView_sub_bookDetail"
+                                    android:textSize="12sp"
+                                    android:visibility="gone"
+                                    app:layout_constraintEnd_toEndOf="@+id/textView_related_title_bookDetail"
+                                    app:layout_constraintStart_toStartOf="@+id/textView_related_title_bookDetail"
+                                    app:layout_constraintTop_toBottomOf="@+id/textView_related_title_bookDetail" />
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    android:id="@+id/textView_relatedViewAll_bookDetail"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="0dp"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_marginEnd="10dp"
+                                    android:gravity="center"
+                                    android:text="@string/view_all"
+                                    android:textAllCaps="false"
+                                    android:textColor="@color/textView_app_color"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold"
+                                    android:visibility="gone"
+                                    app:layout_constraintBottom_toBottomOf="@+id/textView_related_subTitle_bookDetail"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="@+id/textView_related_title_bookDetail" />
+
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:id="@+id/recyclerView_related_bookDetail"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginEnd="10dp"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/view_main_related_bookDetail" />
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <FrameLayout
+                                android:id="@+id/native_ad_layout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="10dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="70dp" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <ProgressBar
+        android:id="@+id/progressBar_bookDetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:theme="@style/ProgressBar" />
+
+    <LinearLayout
+        android:id="@+id/ll_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/lRoot"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/image_favorite_bookDetail"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/ic_favorite" />
+
+                    <TextView
+                        android:id="@+id/favText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="10sp"
+                        android:visibility="gone" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/imageView_read_bookDetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/read_now_background"
+                    android:gravity="center"
+                    android:text="READ NOW"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout_bookDetail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

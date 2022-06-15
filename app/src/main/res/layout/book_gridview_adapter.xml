@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardView_bookGrid_adapter"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="?android:attr/selectableItemBackground"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <RelativeLayout
+        android:id="@+id/rRoot"
+        android:layout_width="match_parent"
+        android:layout_height="150dp">
+
+        <com.jcminarro.roundkornerlayout.RoundKornerRelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:corner_radius="5sp">
+
+            <ImageView
+                android:id="@+id/imageView_bookGrid_adapter"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/placeholder_portable" />
+
+        </com.jcminarro.roundkornerlayout.RoundKornerRelativeLayout>
+    </RelativeLayout>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/textView_title_bookGrid_adapter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textColor="@color/textView_fp"
+        android:textSize="13sp"
+        android:textStyle="bold"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/textView_description_book_home_adapter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="4"
+        android:text="@string/app_name"
+        android:textColor="@color/textView_fp"
+        android:visibility="gone"
+        android:textSize="10sp"/>
+
+</LinearLayout>

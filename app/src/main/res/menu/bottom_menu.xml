@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/readOffline"
+            android:icon="@drawable/library"
+            android:title="Library" />
+
+        <item
+            android:id="@+id/discover"
+            android:icon="@drawable/ic_compass"
+            android:title="@string/home" />
+
+        <item
+            android:id="@+id/profile"
+            android:icon="@drawable/ic_profile"
+            android:title="Me" />
+
+    </group>
+
+</menu>

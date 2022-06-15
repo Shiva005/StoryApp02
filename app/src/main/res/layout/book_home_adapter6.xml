@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardView_book_home_adapter"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?android:attr/selectableItemBackground"
+    android:orientation="vertical"
+    android:padding="5dp">
+
+    <RelativeLayout
+        android:id="@+id/rRoot"
+        android:layout_width="match_parent"
+        android:layout_height="90dp">
+
+
+        <com.jcminarro.roundkornerlayout.RoundKornerRelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:corner_radius="5sp">
+
+            <ImageView
+                android:id="@+id/imageView_book_home_adapter"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/placeholder_portable" />
+        </com.jcminarro.roundkornerlayout.RoundKornerRelativeLayout>
+
+
+        <com.github.ornolfr.ratingview.RatingView
+            android:id="@+id/ratingBar_book_home_adapter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="5dp"
+            app:drawable_empty="@drawable/stare"
+            app:drawable_filled="@drawable/select_stare"
+            app:drawable_margin="1dp"
+            app:drawable_size="11dp"
+            android:visibility="gone"
+            app:is_indicator="true"
+            app:max_count="5" />
+    </RelativeLayout>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/textView_title_book_home_adapter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:visibility="gone"
+        android:textColor="@color/textView_fp"
+        android:textSize="13sp"
+        android:textStyle="bold"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/textView_author_book_home_adapter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textColor="@color/textView_fp"
+        android:textSize="13sp"
+        android:visibility="gone"
+        android:textStyle="bold"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/textView_description_book_home_adapter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="4"
+        android:text="@string/app_name"
+        android:textColor="@color/textView_fp"
+        android:visibility="gone"
+        android:textSize="10sp"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/textView_ratingCount_book_home_adapter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="5dp"
+        android:layout_marginBottom="6dp"
+        android:background="@drawable/rate_count_bg"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="1"
+        android:paddingLeft="5dp"
+        android:paddingTop="1dp"
+        android:paddingRight="5dp"
+        android:paddingBottom="1dp"
+        android:text="@string/number"
+        android:textColor="@color/white"
+        android:textSize="10sp"
+        android:visibility="gone"/>
+
+</LinearLayout>

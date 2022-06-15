@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:background="@color/bg_one_download_adapter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/con_main_editPro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <View
+                android:id="@+id/view_edit_pro"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@drawable/profile_background"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imageView_editPro"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="30dp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/profile"
+                app:civ_border_color="@color/imageView_border_pro"
+                app:civ_border_width="2dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageView_edit_editPro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_add_profile_white"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView_editPro"
+                app:layout_constraintEnd_toEndOf="@+id/imageView_editPro" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textView_name_editPro"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:gravity="center"
+                android:visibility="gone"
+                android:text="@string/app_name"
+                android:textColor="@color/textView_userName_pro"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView_editPro" />
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view_edit_pro">
+
+                <LinearLayout
+                    android:id="@+id/linearLayout2"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="20dp">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/name"
+                        android:textColor="@color/editText_pro"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/editText_name_editPro"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/contactus_background"
+                        android:hint="@string/name"
+                        android:inputType="text"
+                        android:paddingHorizontal="15dp"
+                        android:paddingVertical="13dp"
+                        android:singleLine="true"
+                        android:textColor="@color/editText_pro"
+
+                        android:textSize="14sp"
+                        android:theme="@style/editText_style" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Phone No."
+                        android:textColor="@color/editText_pro"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/editText_phone_editPro"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/contactus_background"
+                        android:hint="@string/phoneNo"
+                        android:inputType="phone|number"
+                        android:paddingHorizontal="15dp"
+                        android:paddingVertical="13dp"
+                        android:singleLine="true"
+                        android:textColor="@color/editText_pro"
+                        android:textSize="14sp"
+                        android:theme="@style/editText_style" />
+
+                    <LinearLayout
+                        android:id="@+id/ll_containerEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="Email Address"
+                            android:textColor="@color/editText_pro"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/editText_email_editPro"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/contactus_background"
+                            android:cursorVisible="false"
+                            android:focusable="false"
+                            android:hint="@string/email"
+                            android:inputType="textEmailAddress"
+                            android:paddingHorizontal="15dp"
+                            android:paddingVertical="13dp"
+                            android:singleLine="true"
+                            android:textColor="@color/editText_pro"
+                            android:textSize="14sp"
+                            android:theme="@style/editText_style" />
+                    </LinearLayout>
+
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/button_editPro"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="40dp"
+                        android:layout_marginBottom="40dp"
+                        android:letterSpacing="0"
+                        android:paddingHorizontal="50dp"
+                        android:paddingVertical="10dp"
+                        android:text="@string/save"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        app:background="@color/button_bg"
+                        app:cornerRadius="20dp" />
+
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:gravity="center"
+                        android:layout_weight="1"
+                        android:text="All information will be kept\nPrivate &amp; Confidential."
+                        android:textColor="@color/editText_pro"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+
+                </LinearLayout>
+            </ScrollView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+    <include
+        layout="@layout/no_data_found"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/progressBar_editPro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:theme="@style/ProgressBar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

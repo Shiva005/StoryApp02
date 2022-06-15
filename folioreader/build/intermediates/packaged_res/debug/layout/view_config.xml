@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="400dp"
+    android:orientation="vertical"
+    tools:layout_gravity="bottom">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingTop="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:paddingStart="20dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="3dp">
+
+                <com.folioreader.util.StyleableTextView
+                    android:id="@+id/buttonVertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="5dp"
+                    android:layout_marginVertical="10dp"
+                    android:drawableTop="@drawable/ic_verticle"
+                    android:drawablePadding="5dp"
+                    android:drawableTint="@color/highlight_green"
+                    android:gravity="center"
+                    android:text="@string/direction_vertical"
+                    android:textSize="12sp"
+                    app:folio_font="@string/lato_font" />
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="3dp">
+
+                <com.folioreader.util.StyleableTextView
+                    android:id="@+id/buttonHorizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="5dp"
+                    android:layout_marginVertical="10dp"
+                    android:drawableTop="@drawable/ic_horizontal"
+                    android:drawablePadding="5dp"
+                    android:drawableTint="@color/highlight_green"
+                    android:gravity="center"
+                    android:text="@string/direction_horizontal"
+                    android:textSize="12sp"
+                    app:folio_font="@string/lato_font" />
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:gravity="end"
+            android:orientation="horizontal">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="3dp">
+
+                <ImageButton
+                    android:id="@+id/view_config_ib_day_mode"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:background="@android:color/transparent"
+                    android:padding="10dp"
+                    android:scaleX="1.5"
+                    android:scaleY="1.5"
+                    app:srcCompat="@drawable/icon_sun_sel" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="3dp">
+
+                <ImageButton
+                    android:id="@+id/view_config_ib_night_mode"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:background="@android:color/transparent"
+                    android:padding="10dp"
+                    android:scaleX="1.5"
+                    android:scaleY="1.5"
+                    app:srcCompat="@drawable/icon_moon_sel" />
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginVertical="10dp"
+        android:background="@color/grey_color" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:gravity="end"
+        android:orientation="horizontal">
+
+        <com.folioreader.ui.view.StyleableTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableTint="@color/black"
+            android:gravity="center"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="5dp"
+            android:text="Choose Font:"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.folioreader.ui.view.StyleableTextView
+                android:id="@+id/view_config_font_andada"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableTint="@color/grey_color"
+                android:gravity="center"
+                android:paddingVertical="5dp"
+                android:text="@string/andada"
+                android:textSize="17sp" />
+
+            <com.folioreader.ui.view.StyleableTextView
+                android:id="@+id/view_config_font_lato"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingVertical="5dp"
+                android:text="@string/lato"
+                android:textSize="17sp"
+                app:folio_font="@string/lato_font" />
+
+            <com.folioreader.ui.view.StyleableTextView
+                android:id="@+id/view_config_font_lora"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingVertical="5dp"
+                android:text="@string/lora"
+                android:textSize="17sp"
+                app:folio_font="@string/lora_font" />
+
+            <com.folioreader.ui.view.StyleableTextView
+                android:id="@+id/view_config_font_raleway"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingVertical="5dp"
+                android:text="@string/raleway"
+                android:textSize="17sp"
+                app:folio_font="@string/raleway_font" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/grey_color" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingHorizontal="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="20dp">
+
+        <ImageView
+            android:id="@+id/view_config_iv_label_font_small"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:adjustViewBounds="false"
+            android:scaleType="center"
+            android:tint="@color/grey_color"
+            app:srcCompat="@drawable/ic_format_font_black_24dp" />
+
+        <SeekBar
+            android:id="@+id/view_config_font_size_seek_bar"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_weight="1"
+            android:max="4" />
+
+        <ImageView
+            android:id="@+id/view_config_iv_label_font_big"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:cropToPadding="false"
+            android:scaleType="center"
+            android:tint="@color/grey_color"
+            app:srcCompat="@drawable/ic_format_font_black_36dp" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

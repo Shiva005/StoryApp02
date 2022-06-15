@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1026678925106",
+    "project_id": "romantry-55848",
+    "storage_bucket": "romantry-55848.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1026678925106:android:f7b92259d54220e528192b",
+        "android_client_info": {
+          "package_name": "com.dreamlibrary.storyapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1026678925106-a8qbmc0p3jijt1hfs4eqro6g37ppc8rv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dreamlibrary.storyapp",
+            "certificate_hash": "3aa3c08a31a9c15b61f24147a9a032ec67448687"
+          }
+        },
+        {
+          "client_id": "1026678925106-642drue89328uubv9hug1gn4g33a8ft4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyACzj9IQefjWZqN0DOXaKeKZhJOg6RYzSc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1026678925106-642drue89328uubv9hug1gn4g33a8ft4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

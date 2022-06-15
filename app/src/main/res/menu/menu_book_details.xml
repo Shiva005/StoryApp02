@@ -1,0 +1,25 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+    <item
+        android:id="@+id/action_download"
+        android:orderInCategory="100"
+        android:icon="@drawable/download"
+        android:title="@string/download"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_report"
+        android:orderInCategory="200"
+        android:title="Search"
+        android:icon="@drawable/ic_error_outline"
+        app:showAsAction="always"
+        ></item>
+    <item
+        android:id="@+id/action_share"
+        android:orderInCategory="300"
+        android:title="User"
+        android:icon="@drawable/ic_share"
+        app:showAsAction="always"/>
+
+</menu>
