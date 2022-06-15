@@ -136,7 +136,8 @@ public class BookAdapterGV extends RecyclerView.Adapter {
                 method.onClickAd(position, type, bookLists.get(position).getId(), "", "", "", "", "");
             });
 
-        } else if (holder.getItemViewType() == VIEW_TYPE_Ad) {
+        }
+        else if (holder.getItemViewType() == VIEW_TYPE_Ad) {
             AdOption adOption = (AdOption) holder;
             if (adOption.conAdView.getChildCount() == 0) {
                 if (bookLists.get(position).getNative_ad_type().equals("admob")) {

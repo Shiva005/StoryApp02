@@ -5,10 +5,12 @@ import static com.dreamlibrary.storyapp.util.Method.personalizationAd;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.Dialog;
+import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -90,12 +92,17 @@ public class ContinueAdapter extends RecyclerView.Adapter{
     private List<BookList> bookLists;
     private OnFavouriteClick onFavouriteClick;
     private Method method;
+    private int columnWidth;
 
     public ContinueAdapter(Activity context, List<BookList> bookLists, OnFavouriteClick onFavouriteClick) {
         this.context = context;
         this.bookLists = bookLists;
         this.onFavouriteClick = onFavouriteClick;
         method=new Method(context);
+
+        Resources r = context.getResources();
+        float padding = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 3, r.getDisplayMetrics());
+        columnWidth = (int) ((method.getScreenWidth() - ((4 + 3) * padding)));
     }
 
     @Override
@@ -421,7 +428,8 @@ public class ContinueAdapter extends RecyclerView.Adapter{
                 }
             });
 
-        } else if (holder.getItemViewType() == VIEW_TYPE_Ad) {
+        }
+        else if (holder.getItemViewType() == VIEW_TYPE_Ad) {
             AdOption adOption = (AdOption) holder;
             if (adOption.conAdView.getChildCount() == 0) {
                 switch (bookLists.get(position).getNative_ad_type()) {
@@ -633,7 +641,11 @@ public class ContinueAdapter extends RecyclerView.Adapter{
 
     @Override
     public int getItemCount() {
-        return bookLists.size()+1;
+        if (bookLists.size() != 0) {
+            return bookLists.size() + 1;
+        } else {
+            return bookLists.size();
+        }
     }
     public void hideHeader() {
         ProgressViewHolder.progressBar.setVisibility(View.GONE);

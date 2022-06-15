@@ -92,6 +92,7 @@ dependencies {
     implementation project(path: ':nativetemplates')
     implementation project(path: ':SmoothCheckBox-master')
     implementation 'com.jcminarro:RoundKornerLayouts:0.4.0'
+
     implementation 'com.github.siyamed:android-shape-imageview:0.9.3'
     implementation 'com.github.ixiDev:GDPRChecker:v0.2'
     //ADs Network

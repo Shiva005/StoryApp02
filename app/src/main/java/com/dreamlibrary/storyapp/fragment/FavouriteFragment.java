@@ -72,6 +72,19 @@ public class FavouriteFragment extends Fragment {
         conNoData.setVisibility(View.GONE);
 
         GridLayoutManager layoutManager = new GridLayoutManager(getActivity(), 3);
+        layoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
+            @Override
+            public int getSpanSize(int position) {
+                if (favouriteAdapter != null) {
+                    if (favouriteAdapter.getItemViewType(position) == 1) {
+                        return 1;
+                    } else {
+                        return 3;
+                    }
+                }
+                return 3;
+            }
+        });
         recyclerView_favorite.setLayoutManager(layoutManager);
         loadMoreData(layoutManager);
         callData();

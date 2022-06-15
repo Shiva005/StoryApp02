@@ -25,6 +25,7 @@ import com.dreamlibrary.storyapp.R;
 import com.dreamlibrary.storyapp.activity.BookDetail;
 import com.dreamlibrary.storyapp.activity.MainActivity;
 import com.dreamlibrary.storyapp.adapter.ContinueAdapter;
+import com.dreamlibrary.storyapp.adapter.FavouriteAdapter;
 import com.dreamlibrary.storyapp.database.DatabaseHandler;
 import com.dreamlibrary.storyapp.interfaces.OnClick;
 import com.dreamlibrary.storyapp.item.BookList;
@@ -78,6 +79,19 @@ public class ContinueFragment extends Fragment {
         conNoData.setVisibility(View.GONE);
 
         GridLayoutManager layoutManager = new GridLayoutManager(getActivity(), 3);
+        layoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
+            @Override
+            public int getSpanSize(int position) {
+                if (continueAdapter != null) {
+                    if (continueAdapter.getItemViewType(position) == 1) {
+                        return 1;
+                    } else {
+                        return 3;
+                    }
+                }
+                return 3;
+            }
+        });
         recyclerView_continue.setLayoutManager(layoutManager);
         loadMoreData(layoutManager);
         callData();
@@ -153,18 +167,20 @@ public class ContinueFragment extends Fragment {
                                     if (bookLists.size() == 0) {
                                         conNoData.setVisibility(View.VISIBLE);
                                     } else {
-                                        continueAdapter = new ContinueAdapter(getActivity(), bookLists, position -> {
-                                            startActivity(new Intent(getActivity(), BookDetail.class)
-                                                    .putExtra("bookId", bookLists.get(position).getId())
-                                                    .putExtra("type", "favourite_book")
-                                                    .putExtra("position", position));
-                                        });
+                                        continueAdapter = new ContinueAdapter(getActivity(), bookLists, position ->
+                                                startActivity(new Intent(getActivity(), BookDetail.class)
+                                                        .putExtra("bookId", bookLists.get(position).getId())
+                                                        .putExtra("type", "favourite_book")
+                                                        .putExtra("position", position)));
+                                        recyclerView_continue.setAdapter(continueAdapter);
+                                        recyclerView_continue.setLayoutAnimation(animation);
                                     }
-                                    recyclerView_continue.setAdapter(continueAdapter);
-                                    recyclerView_continue.setLayoutAnimation(animation);
+                                } else {
+                                    continueAdapter.notifyDataSetChanged();
                                 }
                             } else {
-                                continueAdapter.notifyDataSetChanged();
+                                conNoData.setVisibility(View.VISIBLE);
+                                method.alertBox(bookRP.getMessage());
                             }
                         } catch (Exception e) {
                             Log.d("exception_error", e.toString());
