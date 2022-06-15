@@ -3,6 +3,7 @@ package com.folioreader.ui.view
 import android.animation.Animator
 import android.animation.ArgbEvaluator
 import android.animation.ValueAnimator
+import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -48,18 +49,31 @@ class ConfigBottomSheetDialogFragment : BottomSheetDialogFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        view.setBackgroundColor(Color.TRANSPARENT)
 
         if (activity is FolioActivity)
             activityCallback = activity as FolioActivity
 
         view.viewTreeObserver.addOnGlobalLayoutListener {
             val dialog = dialog as BottomSheetDialog
+
+            (view.parent as View).setBackgroundColor(resources.getColor(android.R.color.transparent))
+
+
             val bottomSheet =
                 dialog.findViewById<View>(com.google.android.material.R.id.design_bottom_sheet) as FrameLayout?
             val behavior = BottomSheetBehavior.from(bottomSheet!!)
             behavior.state = BottomSheetBehavior.STATE_EXPANDED
             behavior.peekHeight = 0
+
+
+
+
+
+
         }
+
+
 
         config = AppUtil.getSavedConfig(activity)!!
         initViews()
@@ -77,11 +91,11 @@ class ConfigBottomSheetDialogFragment : BottomSheetDialogFragment() {
         configSeekBar()
         selectFont(config.font, false)
         isNightMode = config.isNightMode
-        if (isNightMode) {
+        /*if (isNightMode) {
             container.setBackgroundColor(ContextCompat.getColor(context!!, R.color.night))
         } else {
             container.setBackgroundColor(ContextCompat.getColor(context!!, R.color.white))
-        }
+        }*/
 
         if (isNightMode) {
             view_config_ib_day_mode.isSelected = false
@@ -94,14 +108,29 @@ class ConfigBottomSheetDialogFragment : BottomSheetDialogFragment() {
             UiUtil.setColorIntToDrawable(config.themeColor, view_config_ib_day_mode!!.drawable)
             UiUtil.setColorResToDrawable(R.color.app_gray, view_config_ib_night_mode.drawable)
         }
+
+
+
+        imgVertical.setOnClickListener {
+            buttonVertical.performClick()
+            viewSelectedVertical.visibility = View.VISIBLE
+            viewSelectedHorizontal.visibility = View.INVISIBLE
+
+
+        }
+        imgHorizontal.setOnClickListener {
+            buttonHorizontal.performClick()
+            viewSelectedVertical.visibility = View.INVISIBLE
+            viewSelectedHorizontal.visibility = View.VISIBLE
+        }
     }
 
     private fun inflateView() {
 
         if (config.allowedDirection != Config.AllowedDirection.VERTICAL_AND_HORIZONTAL) {
-            //view5.visibility = View.GONE
-            //buttonVertical.visibility = View.GONE
-            //buttonHorizontal.visibility = View.GONE
+            view5.visibility = View.GONE
+            buttonVertical.visibility = View.GONE
+            buttonHorizontal.visibility = View.GONE
         }
 
         view_config_ib_day_mode.setOnClickListener {
@@ -128,8 +157,10 @@ class ConfigBottomSheetDialogFragment : BottomSheetDialogFragment() {
 
         if (activityCallback.direction == Config.Direction.HORIZONTAL) {
             buttonHorizontal.isSelected = true
+            viewSelectedHorizontal.visibility = View.VISIBLE
         } else if (activityCallback.direction == Config.Direction.VERTICAL) {
             buttonVertical.isSelected = true
+            viewSelectedVertical.visibility = View.VISIBLE
         }
 
         buttonVertical.setOnClickListener {
@@ -139,10 +170,6 @@ class ConfigBottomSheetDialogFragment : BottomSheetDialogFragment() {
             activityCallback.onDirectionChange(Config.Direction.VERTICAL)
             buttonHorizontal.isSelected = false
             buttonVertical.isSelected = true
-
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                //buttonVertical.(requireContext().getColor(R.color.black))
-            }
         }
 
         buttonHorizontal.setOnClickListener {
@@ -159,7 +186,7 @@ class ConfigBottomSheetDialogFragment : BottomSheetDialogFragment() {
 
         val colorStateList = UiUtil.getColorList(
             config.themeColor,
-            ContextCompat.getColor(context!!, R.color.grey_color)
+            ContextCompat.getColor(context!!, R.color.white)
         )
         buttonVertical.setTextColor(colorStateList)
         buttonHorizontal.setTextColor(colorStateList)
@@ -195,6 +222,7 @@ class ConfigBottomSheetDialogFragment : BottomSheetDialogFragment() {
         view_config_font_raleway.isSelected = raleway
     }
 
+
     private fun toggleBlackTheme() {
 
         val day = ContextCompat.getColor(context!!, R.color.white)
@@ -206,10 +234,10 @@ class ConfigBottomSheetDialogFragment : BottomSheetDialogFragment() {
         )
         colorAnimation.duration = FADE_DAY_NIGHT_MODE.toLong()
 
-        colorAnimation.addUpdateListener { animator ->
+        /*colorAnimation.addUpdateListener { animator ->
             val value = animator.animatedValue as Int
             container.setBackgroundColor(value)
-        }
+        }*/
 
         colorAnimation.addListener(object : Animator.AnimatorListener {
             override fun onAnimationStart(animator: Animator) {}
@@ -262,17 +290,49 @@ class ConfigBottomSheetDialogFragment : BottomSheetDialogFragment() {
         UiUtil.setColorResToDrawable(R.color.grey_color, view_config_font_size_seek_bar.progressDrawable)
         view_config_font_size_seek_bar.thumb = thumbDrawable
 
+
+        try {
+            tvSize.text = config.fontSize.toString()
+        }catch (e :Exception){
+
+        }
         view_config_font_size_seek_bar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
                 config.fontSize = progress
+                tvSize.text = progress.toString()
                 AppUtil.saveConfig(activity, config)
                 EventBus.getDefault().post(ReloadDataEvent())
+
+
             }
 
             override fun onStartTrackingTouch(seekBar: SeekBar) {}
 
             override fun onStopTrackingTouch(seekBar: SeekBar) {}
         })
+
+
+        tvDecries.setOnClickListener{
+            var progress = view_config_font_size_seek_bar.progress
+            if (progress >= 1) {
+                progress = progress -1
+            }
+            else {
+                progress = 1
+            }
+
+            view_config_font_size_seek_bar.progress = progress
+        }
+
+        tvIncrease.setOnClickListener{
+            var progress = view_config_font_size_seek_bar.progress
+            progress = if (progress <= 4) {
+                progress +1
+            } else
+                4
+
+            view_config_font_size_seek_bar.progress = progress
+        }
     }
 
     private fun setToolBarColor() {

@@ -4,7 +4,7 @@
     <string name="LanguageChooserTitle">Escolha 2 linguagens</string>
     <string name="OK">Ok</string>
     <string name="SetSizeTitle">Painel superior</string>
-    <string name="app_names">FolioReader</string>
+    <string name="app_name">FolioReader</string>
     <string name="cannot_access_epub_message">Sem permissão para acessar o epub</string>
     <string name="changeStyle">Trocar estilo</string>
     <string name="change_Font">Trocar fonte</string>

@@ -8,7 +8,6 @@
         android:id="@+id/itemSearch"
         android:icon="@drawable/ic_search"
         android:title="@string/menu_item_search"
-        android:visible="false"
         app:showAsAction="ifRoom"
         tools:showAsAction="always" />
 
@@ -23,8 +22,8 @@
         android:id="@+id/itemTts"
         android:icon="@drawable/man_speech_icon"
         android:title="@string/menu_item_tts"
-        app:showAsAction="ifRoom"
         android:visible="false"
+        app:showAsAction="ifRoom"
         tools:showAsAction="always" />
 
 </menu>

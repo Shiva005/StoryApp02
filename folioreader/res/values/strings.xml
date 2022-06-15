@@ -1,6 +1,6 @@
 <resources>
 
-    <string name="app_names">FolioReader</string>
+    <string name="app_name">FolioReader</string>
 
     <string name="andada">Andada</string>
     <string name="lato">Lato</string>
@@ -91,8 +91,8 @@
     <string name="dictionary">Dictionary</string>
     <string name="wikipedia">Wikipedia</string>
     <string name="cannot_access_epub_message">Cannot open epub it needs storage access !</string>
-    <string name="direction_horizontal">Swipe right</string>
-    <string name="direction_vertical">Scroll down</string>
+    <string name="direction_horizontal">Horizontal</string>
+    <string name="direction_vertical">Vertical</string>
 
     <string name="xhtml_mime_type" translatable="false">application/xhtml+xml</string>
     <string name="html_mime_type" translatable="false">text/html</string>
@@ -115,5 +115,6 @@
     <string name="callScrollToCfi" translatable="false">javascript:scrollToCfi(\"%s\")</string>
     <string name="callHighlightSearchLocator" translatable="false">javascript:highlightSearchLocator(\"%s\")</string>
     <string name="callClearSelection" translatable="false">javascript:clearSelection()</string>
+    <string name="interstitialAds">ca-app-pub-3940256099942544/1033173712</string>
 
 </resources>

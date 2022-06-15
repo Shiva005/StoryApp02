@@ -189,7 +189,6 @@ public class FolioReader {
      *                       config if it is null in application context or will fetch previously
      *                       saved one while execution.
      */
-
     public FolioReader setConfig(Config config, boolean overrideConfig) {
         this.config = config;
         this.overrideConfig = overrideConfig;

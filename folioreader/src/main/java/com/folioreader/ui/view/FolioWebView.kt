@@ -1,6 +1,5 @@
 package com.folioreader.ui.view
 
-import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.Rect
 import android.graphics.drawable.BitmapDrawable
@@ -199,11 +198,7 @@ class FolioWebView : WebView {
             uiHandler.post { popupWindow.dismiss() }
         }
         selectionRect = Rect()
-        try {
-            uiHandler.removeCallbacks(isScrollingRunnable!!)
-        } catch (e: Exception) {
-            Log.d("error_info", e.toString())
-        }
+        uiHandler.removeCallbacks(isScrollingRunnable)
         isScrollingCheckDuration = 0
         return wasShowing
     }
@@ -250,15 +245,14 @@ class FolioWebView : WebView {
         initViewTextSelection()
     }
 
-    @SuppressLint("InflateParams")
     fun initViewTextSelection() {
-        val v = Log.v(LOG_TAG, "-> initViewTextSelection")
+        Log.v(LOG_TAG, "-> initViewTextSelection")
 
-        val textSelectionMiddleDrawable = ContextCompat.getDrawable(
-                context,
-                R.drawable.abc_text_select
-        )
-        handleHeight = textSelectionMiddleDrawable?.intrinsicHeight ?: (24 * density).toInt()
+//        val textSelectionMiddleDrawable = ContextCompat.getDrawable(
+//            context,
+//            R.drawable.abc_text_select_handle_middle_mtrl_dark
+//        )
+//        handleHeight = textSelectionMiddleDrawable?.intrinsicHeight ?: (24 * density).toInt()
 
         val config = AppUtil.getSavedConfig(context)!!
         val ctw = if (config.isNightMode) {
@@ -337,7 +331,6 @@ class FolioWebView : WebView {
         }
     }
 
-    @SuppressLint("UseRequireInsteadOfGet")
     private fun showDictDialog(selectedText: String?) {
         val dictionaryFragment = DictionaryFragment()
         val bundle = Bundle()
@@ -364,8 +357,8 @@ class FolioWebView : WebView {
             uiHandler.post { parentFragment.loadRangy(rangy) }
             if (highlightImpl != null) {
                 HighlightUtil.sendHighlightBroadcastEvent(
-                        context, highlightImpl,
-                        HighLight.HighLightAction.DELETE
+                    context, highlightImpl,
+                    HighLight.HighLightAction.DELETE
                 )
             }
         }
@@ -486,8 +479,8 @@ class FolioWebView : WebView {
             evaluateJavascript("javascript:getSelectionRect()") { value ->
                 val rectJson = JSONObject(value)
                 setSelectionRect(
-                        rectJson.getInt("left"), rectJson.getInt("top"),
-                        rectJson.getInt("right"), rectJson.getInt("bottom")
+                    rectJson.getInt("left"), rectJson.getInt("top"),
+                    rectJson.getInt("right"), rectJson.getInt("bottom")
                 )
             }
             return false
@@ -534,8 +527,8 @@ class FolioWebView : WebView {
             evaluateJavascript("javascript:getSelectionRect()") { value ->
                 val rectJson = JSONObject(value)
                 setSelectionRect(
-                        rectJson.getInt("left"), rectJson.getInt("top"),
-                        rectJson.getInt("right"), rectJson.getInt("bottom")
+                    rectJson.getInt("left"), rectJson.getInt("top"),
+                    rectJson.getInt("right"), rectJson.getInt("bottom")
                 )
             }
         }
@@ -643,11 +636,11 @@ class FolioWebView : WebView {
                 //val pathClassLoader = PathClassLoader("/system/app/Chrome/Chrome.apk", ClassLoader.getSystemClassLoader())
 
                 val pathClassLoader =
-                        PathClassLoader("/system/app/Chrome/Chrome.apk", folioActivityRef.get()?.classLoader)
+                    PathClassLoader("/system/app/Chrome/Chrome.apk", folioActivityRef.get()?.classLoader)
 
                 val popupTouchHandleDrawableClass = Class.forName(
-                        "org.chromium.android_webview.PopupTouchHandleDrawable",
-                        true, pathClassLoader
+                    "org.chromium.android_webview.PopupTouchHandleDrawable",
+                    true, pathClassLoader
                 )
 
                 //if (!popupTouchHandleDrawableClass.isInstance(mChildren[0]))
@@ -685,7 +678,7 @@ class FolioWebView : WebView {
             Log.i(LOG_TAG, "-> currentSelectionRect doesn't intersects viewportRect")
             uiHandler.post {
                 popupWindow.dismiss()
-                uiHandler.removeCallbacks(isScrollingRunnable!!)
+                uiHandler.removeCallbacks(isScrollingRunnable)
             }
             return
         }
@@ -693,15 +686,15 @@ class FolioWebView : WebView {
 
         if (selectionRect == currentSelectionRect) {
             Log.i(
-                    LOG_TAG, "-> setSelectionRect -> currentSelectionRect is equal to previous " +
-                    "selectionRect so no need to computeTextSelectionRect and show popupWindow again"
+                LOG_TAG, "-> setSelectionRect -> currentSelectionRect is equal to previous " +
+                        "selectionRect so no need to computeTextSelectionRect and show popupWindow again"
             )
             return
         }
 
         Log.i(
-                LOG_TAG, "-> setSelectionRect -> currentSelectionRect is not equal to previous " +
-                "selectionRect so computeTextSelectionRect and show popupWindow"
+            LOG_TAG, "-> setSelectionRect -> currentSelectionRect is not equal to previous " +
+                    "selectionRect so computeTextSelectionRect and show popupWindow"
         )
         selectionRect = currentSelectionRect
 
@@ -777,7 +770,7 @@ class FolioWebView : WebView {
         oldScrollY = scrollY
 
         isScrollingRunnable = Runnable {
-            uiHandler.removeCallbacks(isScrollingRunnable!!)
+            uiHandler.removeCallbacks(isScrollingRunnable)
             val currentScrollX = scrollX
             val currentScrollY = scrollY
             val inTouchMode = lastTouchAction == MotionEvent.ACTION_DOWN ||
@@ -789,8 +782,8 @@ class FolioWebView : WebView {
                 popupWindow = PopupWindow(viewTextSelection, WRAP_CONTENT, WRAP_CONTENT)
                 popupWindow.isClippingEnabled = false
                 popupWindow.showAtLocation(
-                        this@FolioWebView, Gravity.NO_GRAVITY,
-                        popupRect.left, popupRect.top
+                    this@FolioWebView, Gravity.NO_GRAVITY,
+                    popupRect.left, popupRect.top
                 )
             } else {
                 Log.i(LOG_TAG, "-> Still scrolling, don't show Popup")
@@ -798,13 +791,13 @@ class FolioWebView : WebView {
                 oldScrollY = currentScrollY
                 isScrollingCheckDuration += IS_SCROLLING_CHECK_TIMER
                 if (isScrollingCheckDuration < IS_SCROLLING_CHECK_MAX_DURATION && !destroyed)
-                    uiHandler.postDelayed(isScrollingRunnable!!, IS_SCROLLING_CHECK_TIMER.toLong())
+                    uiHandler.postDelayed(isScrollingRunnable, IS_SCROLLING_CHECK_TIMER.toLong())
             }
         }
 
-        uiHandler.removeCallbacks(isScrollingRunnable!!)
+        uiHandler.removeCallbacks(isScrollingRunnable)
         isScrollingCheckDuration = 0
         if (!destroyed)
-            uiHandler.postDelayed(isScrollingRunnable!!, IS_SCROLLING_CHECK_TIMER.toLong())
+            uiHandler.postDelayed(isScrollingRunnable, IS_SCROLLING_CHECK_TIMER.toLong())
     }
 }

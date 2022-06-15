@@ -175,6 +175,7 @@
         <entry key="..\:/StoryApp/app/src/main/res/layout/activity_main.xml" value="0.1675925925925926" />
         <entry key="..\:/StoryApp/app/src/main/res/layout/activity_privacy_policy.xml" value="0.1751787538304392" />
         <entry key="..\:/StoryApp/app/src/main/res/layout/activity_register.xml" value="0.1712962962962963" />
+        <entry key="..\:/StoryApp/app/src/main/res/layout/activity_subscription.xml" value="0.15185185185185185" />
         <entry key="..\:/StoryApp/app/src/main/res/layout/activity_terms.xml" value="0.2" />
         <entry key="..\:/StoryApp/app/src/main/res/layout/author_adapter.xml" value="0.33" />
         <entry key="..\:/StoryApp/app/src/main/res/layout/author_book_fragment.xml" value="0.25" />
@@ -212,12 +213,13 @@
         <entry key="..\:/StoryApp/app/src/main/res/layout/home_category_adapter.xml" value="0.25" />
         <entry key="..\:/StoryApp/app/src/main/res/layout/home_fragment.xml" value="0.16" />
         <entry key="..\:/StoryApp/app/src/main/res/layout/item_author_section.xml" value="0.17864583333333334" />
+        <entry key="..\:/StoryApp/app/src/main/res/layout/item_choose_premium_selection.xml" value="0.1" />
         <entry key="..\:/StoryApp/app/src/main/res/layout/layout_loading_item.xml" value="0.17864583333333334" />
         <entry key="..\:/StoryApp/app/src/main/res/layout/material_toolbar.xml" value="0.22" />
         <entry key="..\:/StoryApp/app/src/main/res/layout/no_data_found.xml" value="0.17864583333333334" />
         <entry key="..\:/StoryApp/app/src/main/res/layout/profile_fragment.xml" value="0.22" />
         <entry key="..\:/StoryApp/app/src/main/res/layout/search_adapter.xml" value="0.17864583333333334" />
-        <entry key="..\:/StoryApp/app/src/main/res/layout/setting_fragment.xml" value="0.22" />
+        <entry key="..\:/StoryApp/app/src/main/res/layout/setting_fragment.xml" value="0.16" />
         <entry key="..\:/StoryApp/app/src/main/res/layout/slider_adapter.xml" value="0.21" />
         <entry key="..\:/StoryApp/app/src/main/res/layout/slider_external_adapter.xml" value="0.17864583333333334" />
         <entry key="..\:/StoryApp/app/src/main/res/menu/bottom_menu.xml" value="0.17864583333333334" />

@@ -1,8 +1,8 @@
 -- Merging decision tree log ---
 manifest
-ADDED from G:\StoryApp\folioreader\AndroidManifest.xml:2:1-44:12
-INJECTED from G:\StoryApp\folioreader\AndroidManifest.xml:2:1-44:12
-INJECTED from G:\StoryApp\folioreader\AndroidManifest.xml:2:1-44:12
+ADDED from G:\StoryApp\folioreader\AndroidManifest.xml:2:1-49:12
+INJECTED from G:\StoryApp\folioreader\AndroidManifest.xml:2:1-49:12
+INJECTED from G:\StoryApp\folioreader\AndroidManifest.xml:2:1-49:12
 	package
 		ADDED from G:\StoryApp\folioreader\AndroidManifest.xml:4:5-30
 		INJECTED from G:\StoryApp\folioreader\AndroidManifest.xml
@@ -11,73 +11,79 @@ INJECTED from G:\StoryApp\folioreader\AndroidManifest.xml:2:1-44:12
 		ADDED from G:\StoryApp\folioreader\AndroidManifest.xml:3:5-51
 	xmlns:android
 		ADDED from G:\StoryApp\folioreader\AndroidManifest.xml:2:11-69
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from G:\StoryApp\folioreader\AndroidManifest.xml:6:5-81
+	android:name
+		ADDED from G:\StoryApp\folioreader\AndroidManifest.xml:6:22-78
 uses-permission#android.permission.INTERNET
 ADDED from G:\StoryApp\folioreader\AndroidManifest.xml:7:5-67
 	android:name
 		ADDED from G:\StoryApp\folioreader\AndroidManifest.xml:7:22-64
+uses-permission#android.permission.WRITE_SETTINGS
+ADDED from G:\StoryApp\folioreader\AndroidManifest.xml:10:5-11:60
+	android:name
+		ADDED from G:\StoryApp\folioreader\AndroidManifest.xml:11:9-57
 uses-sdk
-ADDED from G:\StoryApp\folioreader\AndroidManifest.xml:9:5-88
-INJECTED from G:\StoryApp\folioreader\AndroidManifest.xml:9:5-88
-INJECTED from G:\StoryApp\folioreader\AndroidManifest.xml:9:5-88
-INJECTED from G:\StoryApp\folioreader\AndroidManifest.xml:9:5-88
-INJECTED from G:\StoryApp\folioreader\AndroidManifest.xml:9:5-88
+ADDED from G:\StoryApp\folioreader\AndroidManifest.xml:14:5-88
+INJECTED from G:\StoryApp\folioreader\AndroidManifest.xml:14:5-88
+INJECTED from G:\StoryApp\folioreader\AndroidManifest.xml:14:5-88
+INJECTED from G:\StoryApp\folioreader\AndroidManifest.xml:14:5-88
+INJECTED from G:\StoryApp\folioreader\AndroidManifest.xml:14:5-88
 	tools:overrideLibrary
-		ADDED from G:\StoryApp\folioreader\AndroidManifest.xml:9:15-85
+		ADDED from G:\StoryApp\folioreader\AndroidManifest.xml:14:15-85
 	android:targetSdkVersion
 		INJECTED from G:\StoryApp\folioreader\AndroidManifest.xml
-		ADDED from G:\StoryApp\folioreader\AndroidManifest.xml:9:5-88
+		ADDED from G:\StoryApp\folioreader\AndroidManifest.xml:14:5-88
 		INJECTED from G:\StoryApp\folioreader\AndroidManifest.xml
 	android:minSdkVersion
 		INJECTED from G:\StoryApp\folioreader\AndroidManifest.xml
-		ADDED from G:\StoryApp\folioreader\AndroidManifest.xml:9:5-88
+		ADDED from G:\StoryApp\folioreader\AndroidManifest.xml:14:5-88
 		INJECTED from G:\StoryApp\folioreader\AndroidManifest.xml
 application
-ADDED from G:\StoryApp\folioreader\AndroidManifest.xml:11:5-42:19
-	android:largeHeap
-		ADDED from G:\StoryApp\folioreader\AndroidManifest.xml:13:9-33
+ADDED from G:\StoryApp\folioreader\AndroidManifest.xml:16:5-47:19
 	android:allowBackup
-		ADDED from G:\StoryApp\folioreader\AndroidManifest.xml:12:9-35
+		ADDED from G:\StoryApp\folioreader\AndroidManifest.xml:17:9-35
 	android:networkSecurityConfig
-		ADDED from G:\StoryApp\folioreader\AndroidManifest.xml:14:9-69
+		ADDED from G:\StoryApp\folioreader\AndroidManifest.xml:18:9-69
 	tools:replace
-		ADDED from G:\StoryApp\folioreader\AndroidManifest.xml:15:9-44
+		ADDED from G:\StoryApp\folioreader\AndroidManifest.xml:19:9-44
 provider#com.folioreader.AppContext
-ADDED from G:\StoryApp\folioreader\AndroidManifest.xml:17:9-20:40
+ADDED from G:\StoryApp\folioreader\AndroidManifest.xml:21:9-24:40
 	android:authorities
-		ADDED from G:\StoryApp\folioreader\AndroidManifest.xml:19:13-71
+		ADDED from G:\StoryApp\folioreader\AndroidManifest.xml:23:13-71
 	android:exported
-		ADDED from G:\StoryApp\folioreader\AndroidManifest.xml:20:13-37
+		ADDED from G:\StoryApp\folioreader\AndroidManifest.xml:24:13-37
 	android:name
-		ADDED from G:\StoryApp\folioreader\AndroidManifest.xml:18:13-39
+		ADDED from G:\StoryApp\folioreader\AndroidManifest.xml:22:13-39
 activity#com.folioreader.ui.activity.FolioActivity
-ADDED from G:\StoryApp\folioreader\AndroidManifest.xml:22:9-25:60
+ADDED from G:\StoryApp\folioreader\AndroidManifest.xml:26:9-29:60
 	android:label
-		ADDED from G:\StoryApp\folioreader\AndroidManifest.xml:24:13-46
+		ADDED from G:\StoryApp\folioreader\AndroidManifest.xml:28:13-45
 	android:theme
-		ADDED from G:\StoryApp\folioreader\AndroidManifest.xml:25:13-57
+		ADDED from G:\StoryApp\folioreader\AndroidManifest.xml:29:13-57
 	android:name
-		ADDED from G:\StoryApp\folioreader\AndroidManifest.xml:23:13-69
+		ADDED from G:\StoryApp\folioreader\AndroidManifest.xml:27:13-69
 activity#com.folioreader.ui.activity.ContentHighlightActivity
-ADDED from G:\StoryApp\folioreader\AndroidManifest.xml:27:9-29:59
+ADDED from G:\StoryApp\folioreader\AndroidManifest.xml:31:9-34:66
 	android:theme
-		ADDED from G:\StoryApp\folioreader\AndroidManifest.xml:29:13-56
+		ADDED from G:\StoryApp\folioreader\AndroidManifest.xml:34:13-63
 	android:name
-		ADDED from G:\StoryApp\folioreader\AndroidManifest.xml:28:13-80
+		ADDED from G:\StoryApp\folioreader\AndroidManifest.xml:32:13-80
 activity#com.folioreader.ui.activity.SearchActivity
-ADDED from G:\StoryApp\folioreader\AndroidManifest.xml:31:9-40:20
+ADDED from G:\StoryApp\folioreader\AndroidManifest.xml:36:9-45:20
 	android:launchMode
-		ADDED from G:\StoryApp\folioreader\AndroidManifest.xml:33:13-43
+		ADDED from G:\StoryApp\folioreader\AndroidManifest.xml:38:13-43
 	android:name
-		ADDED from G:\StoryApp\folioreader\AndroidManifest.xml:32:13-70
+		ADDED from G:\StoryApp\folioreader\AndroidManifest.xml:37:13-70
 intent-filter#action:name:android.intent.action.SEARCH
-ADDED from G:\StoryApp\folioreader\AndroidManifest.xml:34:13-36:29
+ADDED from G:\StoryApp\folioreader\AndroidManifest.xml:39:13-41:29
 action#android.intent.action.SEARCH
-ADDED from G:\StoryApp\folioreader\AndroidManifest.xml:35:17-71
+ADDED from G:\StoryApp\folioreader\AndroidManifest.xml:40:17-71
 	android:name
-		ADDED from G:\StoryApp\folioreader\AndroidManifest.xml:35:25-68
+		ADDED from G:\StoryApp\folioreader\AndroidManifest.xml:40:25-68
 meta-data#android.app.searchable
-ADDED from G:\StoryApp\folioreader\AndroidManifest.xml:37:13-39:54
+ADDED from G:\StoryApp\folioreader\AndroidManifest.xml:42:13-44:54
 	android:resource
-		ADDED from G:\StoryApp\folioreader\AndroidManifest.xml:39:17-51
+		ADDED from G:\StoryApp\folioreader\AndroidManifest.xml:44:17-51
 	android:name
-		ADDED from G:\StoryApp\folioreader\AndroidManifest.xml:38:17-54
+		ADDED from G:\StoryApp\folioreader\AndroidManifest.xml:43:17-54

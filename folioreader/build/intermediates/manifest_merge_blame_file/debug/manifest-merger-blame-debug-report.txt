@@ -4,71 +4,74 @@
 4    package="com.folioreader" >
 5
 6    <uses-sdk
-6-->G:\StoryApp\folioreader\AndroidManifest.xml:9:5-88
-7        android:minSdkVersion="21"
-7-->G:\StoryApp\folioreader\AndroidManifest.xml:9:5-88
-8        android:targetSdkVersion="30"
-8-->G:\StoryApp\folioreader\AndroidManifest.xml:9:5-88
+6-->G:\StoryApp\folioreader\AndroidManifest.xml:14:5-88
+7        android:minSdkVersion="19"
+7-->G:\StoryApp\folioreader\AndroidManifest.xml:14:5-88
+8        android:targetSdkVersion="28"
+8-->G:\StoryApp\folioreader\AndroidManifest.xml:14:5-88
 9        tools:overrideLibrary="org.readium.r2.streamer, org.readium.r2.shared" />
-9-->G:\StoryApp\folioreader\AndroidManifest.xml:9:15-85
+9-->G:\StoryApp\folioreader\AndroidManifest.xml:14:15-85
 10
-11    <!-- <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> -->
+11    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+11-->G:\StoryApp\folioreader\AndroidManifest.xml:6:5-81
+11-->G:\StoryApp\folioreader\AndroidManifest.xml:6:22-78
 12    <uses-permission android:name="android.permission.INTERNET" />
 12-->G:\StoryApp\folioreader\AndroidManifest.xml:7:5-67
 12-->G:\StoryApp\folioreader\AndroidManifest.xml:7:22-64
-13
-14    <application
-14-->G:\StoryApp\folioreader\AndroidManifest.xml:11:5-42:19
-15        android:allowBackup="true"
-15-->G:\StoryApp\folioreader\AndroidManifest.xml:12:9-35
-16        android:largeHeap="true"
-16-->G:\StoryApp\folioreader\AndroidManifest.xml:13:9-33
+13    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+13-->G:\StoryApp\folioreader\AndroidManifest.xml:10:5-11:60
+13-->G:\StoryApp\folioreader\AndroidManifest.xml:11:9-57
+14
+15    <application
+15-->G:\StoryApp\folioreader\AndroidManifest.xml:16:5-47:19
+16        android:allowBackup="true"
+16-->G:\StoryApp\folioreader\AndroidManifest.xml:17:9-35
 17        android:networkSecurityConfig="@xml/network_security_config"
-17-->G:\StoryApp\folioreader\AndroidManifest.xml:14:9-69
+17-->G:\StoryApp\folioreader\AndroidManifest.xml:18:9-69
 18        tools:replace="android:allowBackup" >
-18-->G:\StoryApp\folioreader\AndroidManifest.xml:15:9-44
+18-->G:\StoryApp\folioreader\AndroidManifest.xml:19:9-44
 19        <provider
-19-->G:\StoryApp\folioreader\AndroidManifest.xml:17:9-20:40
+19-->G:\StoryApp\folioreader\AndroidManifest.xml:21:9-24:40
 20            android:name="com.folioreader.AppContext"
-20-->G:\StoryApp\folioreader\AndroidManifest.xml:18:13-39
+20-->G:\StoryApp\folioreader\AndroidManifest.xml:22:13-39
 21            android:authorities="${applicationId}.provider.appcontext"
-21-->G:\StoryApp\folioreader\AndroidManifest.xml:19:13-71
+21-->G:\StoryApp\folioreader\AndroidManifest.xml:23:13-71
 22            android:exported="false" />
-22-->G:\StoryApp\folioreader\AndroidManifest.xml:20:13-37
+22-->G:\StoryApp\folioreader\AndroidManifest.xml:24:13-37
 23
 24        <activity
-24-->G:\StoryApp\folioreader\AndroidManifest.xml:22:9-25:60
+24-->G:\StoryApp\folioreader\AndroidManifest.xml:26:9-29:60
 25            android:name="com.folioreader.ui.activity.FolioActivity"
-25-->G:\StoryApp\folioreader\AndroidManifest.xml:23:13-69
-26            android:label="@string/app_names"
-26-->G:\StoryApp\folioreader\AndroidManifest.xml:24:13-46
+25-->G:\StoryApp\folioreader\AndroidManifest.xml:27:13-69
+26            android:label="@string/app_name"
+26-->G:\StoryApp\folioreader\AndroidManifest.xml:28:13-45
 27            android:theme="@style/FolioActivityDayTheme" />
-27-->G:\StoryApp\folioreader\AndroidManifest.xml:25:13-57
+27-->G:\StoryApp\folioreader\AndroidManifest.xml:29:13-57
 28        <activity
-28-->G:\StoryApp\folioreader\AndroidManifest.xml:27:9-29:59
+28-->G:\StoryApp\folioreader\AndroidManifest.xml:31:9-34:66
 29            android:name="com.folioreader.ui.activity.ContentHighlightActivity"
-29-->G:\StoryApp\folioreader\AndroidManifest.xml:28:13-80
-30            android:theme="@style/AppTheme.NoActionBar" />
-30-->G:\StoryApp\folioreader\AndroidManifest.xml:29:13-56
+29-->G:\StoryApp\folioreader\AndroidManifest.xml:32:13-80
+30            android:theme="@style/Theme.AppCompat.Translucent" />
+30-->G:\StoryApp\folioreader\AndroidManifest.xml:34:13-63
 31        <activity
-31-->G:\StoryApp\folioreader\AndroidManifest.xml:31:9-40:20
+31-->G:\StoryApp\folioreader\AndroidManifest.xml:36:9-45:20
 32            android:name="com.folioreader.ui.activity.SearchActivity"
-32-->G:\StoryApp\folioreader\AndroidManifest.xml:32:13-70
+32-->G:\StoryApp\folioreader\AndroidManifest.xml:37:13-70
 33            android:launchMode="singleTop" >
-33-->G:\StoryApp\folioreader\AndroidManifest.xml:33:13-43
+33-->G:\StoryApp\folioreader\AndroidManifest.xml:38:13-43
 34            <intent-filter>
-34-->G:\StoryApp\folioreader\AndroidManifest.xml:34:13-36:29
+34-->G:\StoryApp\folioreader\AndroidManifest.xml:39:13-41:29
 35                <action android:name="android.intent.action.SEARCH" />
-35-->G:\StoryApp\folioreader\AndroidManifest.xml:35:17-71
-35-->G:\StoryApp\folioreader\AndroidManifest.xml:35:25-68
+35-->G:\StoryApp\folioreader\AndroidManifest.xml:40:17-71
+35-->G:\StoryApp\folioreader\AndroidManifest.xml:40:25-68
 36            </intent-filter>
 37
 38            <meta-data
-38-->G:\StoryApp\folioreader\AndroidManifest.xml:37:13-39:54
+38-->G:\StoryApp\folioreader\AndroidManifest.xml:42:13-44:54
 39                android:name="android.app.searchable"
-39-->G:\StoryApp\folioreader\AndroidManifest.xml:38:17-54
+39-->G:\StoryApp\folioreader\AndroidManifest.xml:43:17-54
 40                android:resource="@xml/searchable" />
-40-->G:\StoryApp\folioreader\AndroidManifest.xml:39:17-51
+40-->G:\StoryApp\folioreader\AndroidManifest.xml:44:17-51
 41        </activity>
 42    </application>
 43

@@ -71,6 +71,14 @@ public class TableOfContentFragment extends Fragment implements TOCAdapter.TOCCa
         mTableOfContentsRecyclerView = (RecyclerView) view.findViewById(R.id.recycler_view_menu);
         errorView = (TextView) view.findViewById(R.id.tv_error);
 
+
+
+//        if (mConfig.isNightMode()){
+//            mTableOfContentsRecyclerView.setBackgroundColor(getResources().getColor(R.color.grey_color));
+//        }
+//        else
+//            mTableOfContentsRecyclerView.setBackgroundColor(getResources().getColor(R.color.white));
+
         configRecyclerViews();
         initAdapter();
     }

@@ -91,5 +91,4 @@ public class SharedPreferenceUtil {
         editor.remove(key);
         return editor.commit();
     }
-
 }

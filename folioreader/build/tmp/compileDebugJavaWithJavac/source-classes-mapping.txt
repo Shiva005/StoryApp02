@@ -90,6 +90,7 @@ com/folioreader/ui/activity/ContentHighlightActivity.java
  com.folioreader.ui.activity.ContentHighlightActivity$1
  com.folioreader.ui.activity.ContentHighlightActivity$2
  com.folioreader.ui.activity.ContentHighlightActivity$3
+ com.folioreader.ui.activity.ContentHighlightActivity$4
 com/folioreader/ui/view/UnderlinedTextView.java
  com.folioreader.ui.view.UnderlinedTextView
 com/folioreader/model/event/ReloadDataEvent.java
@@ -100,6 +101,7 @@ com/folioreader/model/dictionary/DictionaryResults.java
  com.folioreader.model.dictionary.DictionaryResults
 com/folioreader/ui/adapter/TOCAdapter.java
  com.folioreader.ui.adapter.TOCAdapter
+ com.folioreader.ui.adapter.TOCAdapter$1
  com.folioreader.ui.adapter.TOCAdapter$TOCCallback
  com.folioreader.ui.adapter.TOCAdapter$TOCRowViewHolder
  com.folioreader.ui.adapter.TOCAdapter$TOCRowViewHolder$1

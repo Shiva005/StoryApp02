@@ -110,6 +110,7 @@
     <color name="contactus_background">#DDDDDD</color>
     <color name="email_background">#E97CFF</color>
     <color name="subs_background">#E5ACF1</color>
+    <color name="lighter_grey">#D3D2D2</color>
 
     <color name="light">#B6B6B6</color>
 </resources>

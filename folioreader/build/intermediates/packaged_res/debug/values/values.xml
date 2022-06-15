@@ -10,9 +10,10 @@
     <color name="app_gray">#bcbcbc</color>
     <color name="black">#000000</color>
     <color name="borders">#F1EFF2</color>
-    <color name="colorAccent">#D81B60</color>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
+    <color name="bottomBarColorForNight">#30343A</color>
+    <color name="colorAccent">#3949AB</color>
+    <color name="colorPrimary">#3949AB</color>
+    <color name="colorPrimaryDark">#3949AB</color>
     <color name="dark_night">#090609</color>
     <color name="day_background_color">#FFFAFAFA</color>
     <color name="day_default_font_color">#000000</color>
@@ -20,7 +21,7 @@
     <color name="day_popup_window_background">@color/white</color>
     <color name="day_scroll_bar_color">#44000000</color>
     <color name="day_underline_icon_fill_color_top">#333333</color>
-    <color name="default_theme_accent_color">#71C951</color>
+    <color name="default_theme_accent_color">#3949AB</color>
     <color name="edit_text_hint_color">#AAAAAA</color>
     <color name="gray_text">#B6B6B6</color>
     <color name="grey_color">#a8a8a8</color>
@@ -28,8 +29,6 @@
     <color name="highlight_green">#C0ED72</color>
     <color name="highlight_pink">#FFB0CA</color>
     <color name="highlight_yellow">#FFEB6B</color>
-    <color name="light_grey">#E6E4E4</color>
-    <color name="lighter_grey">#CFCECE</color>
     <color name="night">#322D32</color>
     <color name="night_background_color">@color/webview_night</color>
     <color name="night_default_font_color">#767676</color>
@@ -56,7 +55,7 @@
     <string name="SetSizeTitle">Upper Panel Size:</string>
     <string name="andada">Andada</string>
     <string name="andada_font">fonts/andada/Andada-Regular.otf</string>
-    <string name="app_names">FolioReader</string>
+    <string name="app_name">FolioReader</string>
     <string name="audio_mark_id">javascript:alert(audioMarkID(\'epub-media-overlay-playing\',\'%s\'))</string>
     <string name="authorsMeta">&lt;tr>&lt;td>Authors:&lt;/td></string>
     <string name="black_rgb">#000000</string>
@@ -79,8 +78,8 @@
     <string name="define">Define</string>
     <string name="descriptionsMeta">&lt;tr>&lt;td>Descriptions:&lt;/td></string>
     <string name="dictionary">Dictionary</string>
-    <string name="direction_horizontal">Swipe right</string>
-    <string name="direction_vertical">Scroll down</string>
+    <string name="direction_horizontal">Horizontal</string>
+    <string name="direction_vertical">Vertical</string>
     <string name="edit_notes">Save your note</string>
     <string name="error_CannotChangeStyle">Cannot Change Style!</string>
     <string name="error_goToPage">goToPage error:</string>
@@ -95,6 +94,7 @@
     <string name="highlights">Highlights</string>
     <string name="htmlBodyTableOpen">&lt;html>&lt;body>&lt;table></string>
     <string name="html_mime_type" translatable="false">text/html</string>
+    <string name="interstitialAds">ca-app-pub-3940256099942544/1033173712</string>
     <string name="languageMeta">&lt;tr>&lt;td>Language:&lt;/td>&lt;td></string>
     <string name="lato">Lato</string>
     <string name="lato_font">fonts/lato/Lato-Regular.ttf</string>
@@ -312,6 +312,20 @@
         <item name="android:focusable">true</item>
         <item name="android:clickable">true</item>
         <item name="android:background">?selectableItemBackground</item>
+    </style>
+    <style name="Theme.AppCompat.Translucent" parent="Theme.AppCompat.NoActionBar">
+        <!--on below line we are setting background as transparent color-->
+        <item name="android:background">@android:color/transparent</item>
+        <!--on below line we are displaying the windowNotitle as true as we are not displaying our status bar-->
+        <item name="android:windowNoTitle">true</item>
+        <!--on below line we are setting our window background as transparent color-->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!--on below line we are setting color background cache hint as null-->
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <!--on below line we are adding a window translucent as true-->
+        <item name="android:windowIsTranslucent">true</item>
+        <!--on below line we are adding a window animationstyle-->
+        <item name="android:windowAnimationStyle">@android:style/Animation</item>
     </style>
     <style name="ToolbarStyle" parent="@style/Widget.AppCompat.Toolbar">
         <item name="android:paddingRight">4dp</item>

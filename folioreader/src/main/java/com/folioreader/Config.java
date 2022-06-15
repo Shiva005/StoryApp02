@@ -32,6 +32,7 @@ public class Config implements Parcelable {
 
     private int font = 3;
     private int fontSize = 2;
+    private String book_cover_img = "";
     private boolean nightMode;
     @ColorInt
     private int themeColor = DEFAULT_THEME_COLOR_INT;
@@ -143,6 +144,15 @@ public class Config implements Parcelable {
 
     public Config setFont(int font) {
         this.font = font;
+        return this;
+    }
+
+    public String getCover() {
+        return book_cover_img;
+    }
+
+    public Config setCover(String book_cover_imgs) {
+        book_cover_img = book_cover_imgs;
         return this;
     }
 
