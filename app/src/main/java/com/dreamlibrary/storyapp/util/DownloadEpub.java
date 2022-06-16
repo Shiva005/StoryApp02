@@ -10,6 +10,7 @@ import com.folioreader.FolioReader;
 import com.folioreader.model.locators.ReadLocator;
 import com.dreamlibrary.storyapp.R;
 import com.dreamlibrary.storyapp.database.DatabaseHandler;
+import com.folioreader.ui.activity.ContentHighlightActivity;
 
 import java.io.File;
 import java.io.IOException;
@@ -40,7 +41,7 @@ public class DownloadEpub {
         db = new DatabaseHandler(activity);
     }
 
-    public void pathEpub(String path, String bookId) {
+    public void pathEpub(String path, String bookId, String book_cover_img, String title) {
 
         Utils.show(activity);
 
@@ -67,7 +68,7 @@ public class DownloadEpub {
 
             if (fileOpen.exists()) {
                 Utils.dismiss();
-                openBook(fileOpen.toString(), bookId);
+                openBook(fileOpen.toString(), bookId, book_cover_img, title);
             } else {
                 client = new OkHttpClient();
                 Request.Builder builder = new Request.Builder()
@@ -117,7 +118,7 @@ public class DownloadEpub {
                                 super.onUIProgressFinish();
                                 Log.e("TAG", "onUIProgressFinish:");
                                 Utils.dismiss();
-                                openBook(fileOpen.toString(), bookId);
+                                openBook(fileOpen.toString(), bookId, book_cover_img, title);
                             }
                         });
 
@@ -146,11 +147,16 @@ public class DownloadEpub {
     }
 
     //Change direction here
-    private void openBook(String path, String id) {
+    private void openBook(String path, String id, String book_cover_img, String title) {
+
+        ContentHighlightActivity.bookCover = book_cover_img;
+        ContentHighlightActivity.title = title;
+
         Config config = new Config()
-                .setAllowedDirection(Config.AllowedDirection.ONLY_VERTICAL)
-                .setDirection(Config.Direction.VERTICAL)
-                .setFontSize(3)
+//                .setAllowedDirection(Config.AllowedDirection.ONLY_HORIZONTAL)
+//                .setDirection(Config.Direction.HORIZONTAL)
+                .setFontSize(2)
+                .setCover(book_cover_img)
                 .setShowTts(true);
 
         final FolioReader folioReader = FolioReader.get().setConfig(config, true);
@@ -171,5 +177,4 @@ public class DownloadEpub {
             }
         });
     }
-
 }

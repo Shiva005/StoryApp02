@@ -1,7 +1,5 @@
 package com.dreamlibrary.storyapp.activity;
 
-import static com.dreamlibrary.storyapp.util.Method.largeLogcat;
-
 import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Context;
@@ -126,7 +124,7 @@ public class BookDetail extends AppCompatActivity {
     private ConstraintLayout conNoData, conRelated, conComment;
     private LinearLayout conMain;
     private ImageView imageView, imageViewBookCover, imageViewFav, imageViewSend;
-    private LinearLayout ratingLayout, llAuthorClick,llTagContainer;
+    private LinearLayout ratingLayout, llAuthorClick, llTagContainer;
 
     private TextView imageViewRead;
     private TextView favText;
@@ -548,10 +546,10 @@ public class BookDetail extends AppCompatActivity {
                 break;
             case R.id.action_share:
 
-                    Intent intent = new Intent(Intent.ACTION_SEND);
-                    intent.setType("text/plain");
-                    intent.putExtra(Intent.EXTRA_TEXT, "I am reading \""+bookDetailRP.getBook_title()+"\" on "+getResources().getString(R.string.app_name)+" come & join me at https://play.google.com/store/apps/details?id=" + getApplicationContext().getPackageName());
-                    startActivity(Intent.createChooser(intent, getResources().getString(R.string.choose_one)));
+                Intent intent = new Intent(Intent.ACTION_SEND);
+                intent.setType("text/plain");
+                intent.putExtra(Intent.EXTRA_TEXT, "I am reading \"" + bookDetailRP.getBook_title() + "\" on " + getResources().getString(R.string.app_name) + " come & join me at https://play.google.com/store/apps/details?id=" + getApplicationContext().getPackageName());
+                startActivity(Intent.createChooser(intent, getResources().getString(R.string.choose_one)));
 
                 break;
             default:
@@ -581,6 +579,8 @@ public class BookDetail extends AppCompatActivity {
 
                     //for printing large logs i.e for printing more that 4000 words
                     //largeLogcat("BOOK_DETAILS", new Gson().toJson(response.body()));
+
+                    Log.e("TAG", bookDetailRP.getCopyright_link());
 
                     if (bookDetailRP.getStatus().equals("1")) {
 
@@ -642,7 +642,7 @@ public class BookDetail extends AppCompatActivity {
                                 webView.loadDataWithBaseURL(null, text.substring(0, text.length() - 1), mimeType, encoding, null);
                             } else {
                                 seeMore.setText("More");
-                                webView.loadDataWithBaseURL(null, text.length() > 500 ? text.substring(0, 500)+" ..." : text, mimeType, encoding, null);
+                                webView.loadDataWithBaseURL(null, text.length() > 500 ? text.substring(0, 500) + " ..." : text, mimeType, encoding, null);
                             }
                         });
                         textViewBookName.setText(bookDetailRP.getBook_title());
@@ -663,9 +663,9 @@ public class BookDetail extends AppCompatActivity {
                         textViewView.setText(Method.Format(Integer.parseInt(bookDetailRP.getBook_views())) /*+ "\nReads"*/);
 
                         List<String> bookTagList = Arrays.asList(bookDetailRP.getBook_tag().split(","));
-                        if(bookTagList.size()==0){
+                        if (bookTagList.size() == 0) {
                             llTagContainer.setVisibility(View.GONE);
-                        }else {
+                        } else {
                             llTagContainer.setVisibility(View.VISIBLE);
                             llTagContainer.setVisibility(View.VISIBLE);
                             BookTagAdapter bookTagAdapter = new BookTagAdapter(BookDetail.this, bookTagList);
@@ -881,13 +881,14 @@ public class BookDetail extends AppCompatActivity {
     private void openBook() {
         if (bookDetailRP.getBook_file_url().contains(".epub")) {
             DownloadEpub downloadEpub = new DownloadEpub(BookDetail.this);
-            downloadEpub.pathEpub(bookDetailRP.getBook_file_url(), bookDetailRP.getId());
+            downloadEpub.pathEpub(bookDetailRP.getBook_file_url(), bookDetailRP.getId(), bookDetailRP.getBook_cover_img(), bookDetailRP.getBook_title());
         } else {
             startActivity(new Intent(BookDetail.this, PDFShow.class)
                     .putExtra("id", bookDetailRP.getId())
                     .putExtra("link", bookDetailRP.getBook_file_url())
                     .putExtra("toolbarTitle", bookDetailRP.getBook_title())
                     .putExtra("type", "link"));
+            Utils.dismiss();
         }
     }
 

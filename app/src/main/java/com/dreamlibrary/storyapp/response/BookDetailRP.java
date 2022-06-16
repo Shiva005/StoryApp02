@@ -55,6 +55,9 @@ public class BookDetailRP implements Serializable {
     @SerializedName("rate_avg")
     private String rate_avg;
 
+    @SerializedName("copyright_link")
+    private String copyright_link;
+
     @SerializedName("book_views")
     private String book_views;
 
@@ -78,6 +81,10 @@ public class BookDetailRP implements Serializable {
 
     @SerializedName("user_comments")
     private List<CommentList> commentLists;
+
+    public String getCopyright_link() {
+        return copyright_link;
+    }
 
     public String getSub_cat_id() {
         return sub_cat_id;
