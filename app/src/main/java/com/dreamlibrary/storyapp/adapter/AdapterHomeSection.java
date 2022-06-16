@@ -188,9 +188,11 @@ public class AdapterHomeSection extends RecyclerView.Adapter<AdapterHomeSection.
             } else if (albumPosition == 4) {
                 layoutManager = new GridLayoutManager(activity, 4, RecyclerView.VERTICAL, false);
             } else if (albumPosition == 5) {
-                layoutManager = new GridLayoutManager(activity, 1, RecyclerView.VERTICAL, false);
+                layoutManager = new GridLayoutManager(activity, 3, RecyclerView.VERTICAL, false);
             } else if (albumPosition == 6) {
                 layoutManager = new GridLayoutManager(activity, 1, RecyclerView.HORIZONTAL, false);
+            } else if (albumPosition == 7) {
+                layoutManager = new GridLayoutManager(activity, 1, RecyclerView.VERTICAL, false);
             } else {
                 layoutManager = new GridLayoutManager(activity, 3, RecyclerView.VERTICAL, false);
             }
@@ -247,10 +249,13 @@ public class AdapterHomeSection extends RecyclerView.Adapter<AdapterHomeSection.
                 View mView = LayoutInflater.from(activity).inflate(R.layout.book_home_adapter6, parent, false);
                 return new ChildHomeSectionAdapter.ViewHolder(mView);
             } else if (pos - 1 == 5) {
-                View mView = LayoutInflater.from(activity).inflate(R.layout.book_home_adapter2, parent, false);
+                View mView = LayoutInflater.from(activity).inflate(R.layout.book_home_adapter, parent, false);
                 return new ChildHomeSectionAdapter.ViewHolder(mView);
             } else if (pos - 1 == 6) {
                 View mView = LayoutInflater.from(activity).inflate(R.layout.book_home_adapter5, parent, false);
+                return new ChildHomeSectionAdapter.ViewHolder(mView);
+            }else if (pos - 1 == 7) {
+                View mView = LayoutInflater.from(activity).inflate(R.layout.book_home_adapter2, parent, false);
                 return new ChildHomeSectionAdapter.ViewHolder(mView);
             } else {
                 View mView = LayoutInflater.from(activity).inflate(R.layout.book_home_adapter, parent, false);

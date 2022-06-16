@@ -159,9 +159,9 @@ public class AdapterSearchSection extends RecyclerView.Adapter<AdapterSearchSect
             viewAllText.setVisibility(View.GONE);
 
             if (albumPosition == 0) {
-                layoutManager = new GridLayoutManager(activity, 3, RecyclerView.HORIZONTAL, false);
-            }else if (albumPosition == 1) {
                 layoutManager = new GridLayoutManager(activity, 3, RecyclerView.VERTICAL, false);
+            }else if (albumPosition == 1) {
+                layoutManager = new GridLayoutManager(activity, 3, RecyclerView.HORIZONTAL, false);
             } else if (albumPosition == 2) {
                 layoutManager = new GridLayoutManager(activity, 3, RecyclerView.HORIZONTAL, false);
             }else if (albumPosition == 3) {
@@ -171,7 +171,7 @@ public class AdapterSearchSection extends RecyclerView.Adapter<AdapterSearchSect
             }else if (albumPosition == 5) {
                 layoutManager = new GridLayoutManager(activity, 2, RecyclerView.HORIZONTAL, false);
             }else {
-                layoutManager = new GridLayoutManager(activity, 1, RecyclerView.VERTICAL, false);
+                layoutManager = new GridLayoutManager(activity, 3, RecyclerView.HORIZONTAL, false);
             }
 
             recyclerViewAuthor.setLayoutManager(layoutManager);
@@ -211,13 +211,13 @@ public class AdapterSearchSection extends RecyclerView.Adapter<AdapterSearchSect
         public ChildHomeSectionAdapter.ViewHolder onCreateViewHolder(@NotNull ViewGroup parent, int viewType) {
 
             if (pos == 0) {
-                View mView = LayoutInflater.from(activity).inflate(R.layout.book_listview_adapter, parent, false);
+                View mView = LayoutInflater.from(activity).inflate(R.layout.book_listview_adapter5, parent, false);
                 return new ViewHolder(mView);
             } else if (pos-1 == 0) {
-                View mView = LayoutInflater.from(activity).inflate(R.layout.book_listview_adapter2, parent, false);
+                View mView = LayoutInflater.from(activity).inflate(R.layout.book_listview_adapter3, parent, false);
                 return new ViewHolder(mView);
             } else if (pos-1 == 1) {
-                View mView = LayoutInflater.from(activity).inflate(R.layout.book_listview_adapter3, parent, false);
+                View mView = LayoutInflater.from(activity).inflate(R.layout.book_listview_adapter2, parent, false);
                 return new ViewHolder(mView);
             }else if (pos-1 == 2) {
                 View mView = LayoutInflater.from(activity).inflate(R.layout.book_listview_adapter5, parent, false);

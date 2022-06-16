@@ -157,6 +157,7 @@ public class ProfileFragment extends Fragment {
 
     private void settingScreen(View view) {
 
+        LinearLayout writeMyStory = view.findViewById(R.id.con_write_my_story);
         LinearLayout premiumPlus = view.findViewById(R.id.con_premium_plus_setting);
         LinearLayout conContactUs = view.findViewById(R.id.con_contactUs_setting);
         LinearLayout conFaq = view.findViewById(R.id.con_faq_setting);
@@ -170,6 +171,9 @@ public class ProfileFragment extends Fragment {
         conAppSetting.setOnClickListener(v -> {
             getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout_main, new SettingFragment(),
                     getResources().getString(R.string.settings)).addToBackStack("Profile").commitAllowingStateLoss();
+        });
+        writeMyStory.setOnClickListener(v -> {
+            method.alertBox("This feature is coming soon...");
         });
 
         premiumPlus.setOnClickListener(v -> {
