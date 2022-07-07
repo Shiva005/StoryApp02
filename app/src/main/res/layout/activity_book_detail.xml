@@ -310,120 +310,13 @@
                                     android:layout_height="wrap_content" />
                             </LinearLayout>
 
-                            <androidx.constraintlayout.widget.ConstraintLayout
-                                android:id="@+id/con_commentList_bookDetail"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content">
-
-                                <com.google.android.material.textview.MaterialTextView
-                                    android:id="@+id/textView_commentTitle_bookDetail"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginStart="10dp"
-                                    android:layout_marginTop="10dp"
-                                    android:layout_marginBottom="5dp"
-                                    android:text="@string/comments"
-                                    android:textColor="@color/textView_bookDetail"
-                                    android:textSize="18sp"
-                                    android:textStyle="bold"
-                                    app:layout_constraintStart_toStartOf="parent"
-                                    app:layout_constraintTop_toTopOf="parent" />
-
-                                <View
-                                    android:id="@+id/view_comment_bookDetail"
-                                    android:layout_width="35dp"
-                                    android:layout_height="2dp"
-                                    android:layout_marginTop="2dp"
-                                    android:background="@color/textView_app_color"
-                                    android:visibility="gone"
-                                    app:layout_constraintEnd_toEndOf="@+id/textView_commentTitle_bookDetail"
-                                    app:layout_constraintHorizontal_bias="0.0"
-                                    app:layout_constraintStart_toStartOf="@+id/textView_commentTitle_bookDetail"
-                                    app:layout_constraintTop_toBottomOf="@+id/textView_commentTitle_bookDetail" />
-
-                                <com.google.android.material.textview.MaterialTextView
-                                    android:id="@+id/textView_comment_bookDetail"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_alignParentEnd="true"
-                                    android:layout_marginEnd="10dp"
-                                    android:gravity="center"
-                                    android:text="@string/view_all"
-                                    android:textAllCaps="false"
-                                    android:textColor="@color/textView_app_color"
-                                    android:textSize="16sp"
-                                    android:textStyle="bold"
-                                    app:layout_constraintBottom_toBottomOf="@+id/view_comment_bookDetail"
-                                    app:layout_constraintEnd_toEndOf="parent"
-                                    app:layout_constraintTop_toTopOf="@+id/textView_commentTitle_bookDetail" />
-
-                                <androidx.recyclerview.widget.RecyclerView
-                                    android:id="@+id/recyclerView_comment_bookDetail"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginTop="5dp"
-                                    app:layout_constraintBottom_toBottomOf="parent"
-                                    app:layout_constraintEnd_toEndOf="parent"
-                                    app:layout_constraintStart_toStartOf="parent"
-                                    app:layout_constraintTop_toBottomOf="@+id/textView_commentTitle_bookDetail" />
-                            </androidx.constraintlayout.widget.ConstraintLayout>
-
-                            <LinearLayout
+                            <FrameLayout
+                                android:id="@+id/native_ad_layout"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginHorizontal="5dp"
-                                android:gravity="center"
-                                android:orientation="horizontal">
+                                android:layout_marginHorizontal="10dp"
+                                android:layout_marginVertical="5dp" />
 
-                                <com.google.android.material.card.MaterialCardView
-                                    android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginVertical="5dp"
-                                    android:layout_marginStart="5dp"
-                                    android:layout_marginEnd="10dp"
-                                    android:layout_weight="1"
-                                    app:cardCornerRadius="30dp">
-
-                                    <LinearLayout
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:orientation="horizontal">
-
-                                        <de.hdodenhof.circleimageview.CircleImageView
-                                            android:id="@+id/imageView_commentPro_bookDetail"
-                                            android:layout_width="45dp"
-                                            android:layout_height="wrap_content"
-                                            android:layout_gravity="center"
-                                            android:layout_marginStart="10dp"
-                                            android:src="@drawable/profile"
-                                            android:visibility="gone"
-                                            app:civ_border_color="@color/userComment_border_bookDetail"
-                                            app:civ_border_width="2dp" />
-
-                                        <com.google.android.material.textfield.TextInputEditText
-                                            android:id="@+id/editText_comment_bookDetail"
-                                            android:layout_width="match_parent"
-                                            android:layout_height="wrap_content"
-                                            android:hint="@string/leave_your_comment"
-                                            android:paddingHorizontal="20dp"
-                                            android:paddingVertical="10dp"
-                                            android:textColor="@color/editText_comment_bookDetail"
-                                            android:textColorHint="@color/editText_comment_bookDetail"
-                                            android:textSize="14sp"
-                                            android:theme="@style/editText_style" />
-
-                                    </LinearLayout>
-
-                                </com.google.android.material.card.MaterialCardView>
-
-                                <ImageView
-                                    android:id="@+id/imageView_comment_bookDetail"
-                                    android:layout_width="40dp"
-                                    android:layout_height="40dp"
-                                    android:contentDescription="@string/app_name"
-                                    android:src="@drawable/ic_comment" />
-
-                            </LinearLayout>
 
                             <androidx.constraintlayout.widget.ConstraintLayout
                                 android:id="@+id/con_related_bookDetail"
@@ -514,13 +407,135 @@
 
                             </androidx.constraintlayout.widget.ConstraintLayout>
 
-                            <FrameLayout
-                                android:id="@+id/native_ad_layout"
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/con_commentList_bookDetail"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    android:id="@+id/textView_commentTitle_bookDetail"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginBottom="5dp"
+                                    android:text="@string/comments"
+                                    android:textColor="@color/textView_bookDetail"
+                                    android:textSize="18sp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <View
+                                    android:id="@+id/view_comment_bookDetail"
+                                    android:layout_width="35dp"
+                                    android:layout_height="2dp"
+                                    android:layout_marginTop="2dp"
+                                    android:background="@color/textView_app_color"
+                                    android:visibility="gone"
+                                    app:layout_constraintEnd_toEndOf="@+id/textView_commentTitle_bookDetail"
+                                    app:layout_constraintHorizontal_bias="0.0"
+                                    app:layout_constraintStart_toStartOf="@+id/textView_commentTitle_bookDetail"
+                                    app:layout_constraintTop_toBottomOf="@+id/textView_commentTitle_bookDetail" />
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    android:id="@+id/textView_comment_bookDetail"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_marginEnd="10dp"
+                                    android:gravity="center"
+                                    android:text="View All >"
+                                    android:textAllCaps="false"
+                                    android:textColor="@color/textView_app_color"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintBottom_toBottomOf="@+id/view_comment_bookDetail"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="@+id/textView_commentTitle_bookDetail" />
+
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:id="@+id/recyclerView_comment_bookDetail"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/textView_commentTitle_bookDetail" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginHorizontal="10dp"
-                                android:layout_marginTop="5dp"
-                                android:layout_marginBottom="70dp" />
+                                android:layout_marginHorizontal="5dp"
+                                android:gravity="center"
+                                android:visibility="gone"
+                                android:orientation="horizontal">
+
+                                <com.google.android.material.card.MaterialCardView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginVertical="5dp"
+                                    android:layout_marginStart="5dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:layout_weight="1"
+                                    app:cardCornerRadius="30dp">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+
+                                        <de.hdodenhof.circleimageview.CircleImageView
+                                            android:id="@+id/imageView_commentPro_bookDetail"
+                                            android:layout_width="45dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:layout_marginStart="10dp"
+                                            android:src="@drawable/profile"
+                                            android:visibility="gone"
+                                            app:civ_border_color="@color/userComment_border_bookDetail"
+                                            app:civ_border_width="2dp" />
+
+                                        <com.google.android.material.textfield.TextInputEditText
+                                            android:id="@+id/editText_comment_bookDetail"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:hint="@string/leave_your_comment"
+                                            android:paddingHorizontal="20dp"
+                                            android:paddingVertical="10dp"
+                                            android:textColor="@color/editText_comment_bookDetail"
+                                            android:textColorHint="@color/editText_comment_bookDetail"
+                                            android:textSize="14sp"
+                                            android:theme="@style/editText_style" />
+
+                                    </LinearLayout>
+
+                                </com.google.android.material.card.MaterialCardView>
+
+                                <ImageView
+                                    android:id="@+id/imageView_comment_bookDetail"
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:contentDescription="@string/app_name"
+                                    android:src="@drawable/ic_comment" />
+
+                            </LinearLayout>
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/btn_addNewComment"
+                                android:layout_width="wrap_content"
+                                android:text="Add new comment"
+                                app:cornerRadius="30dp"
+                                android:paddingVertical="12dp"
+                                android:paddingHorizontal="40dp"
+                                android:letterSpacing="0"
+                                android:layout_gravity="center_horizontal"
+                                android:backgroundTint="@color/orange"
+                                android:layout_marginVertical="10dp"
+                                android:textAllCaps="false"
+                                android:layout_height="wrap_content"/>
 
                         </LinearLayout>
 

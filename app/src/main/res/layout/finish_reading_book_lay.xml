@@ -1,70 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:backgroundTint="#79ceef"
-    app:cardCornerRadius="10dp"
-    app:cardElevation="5dp"
-    android:layout_margin="10dp"
-    >
+    android:layout_marginBottom="-30dp"
+    app:cardCornerRadius="30dp"
+    android:backgroundTint="@color/bg_one_download_adapter"
+    app:cardElevation="5dp">
 
-    <RelativeLayout
-        android:layout_margin="10dp"
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#79ceef">
+        android:layout_height="match_parent">
 
         <TextView
             android:id="@+id/textV"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
             android:gravity="center"
-            android:layout_marginTop="10dp"
             android:text="Have you completed the book ?"
-            android:textColor="@color/red"
+            android:textColor="@color/black"
             android:textSize="20dp" />
 
-        <LinearLayout
-            android:layout_marginTop="30dp"
-            android:layout_marginBottom="5dp"
-            android:layout_below="@+id/textV"
+        <View
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/grey_color"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:orientation="horizontal"
-            >
+            android:layout_height="1dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textV"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="60dp"
+            android:orientation="horizontal">
 
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:gravity="center"
-                >
-                <Button
+                android:gravity="center">
+
+                <TextView
                     android:id="@+id/yesBt"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:text="yes"
-                    android:backgroundTint="#F44336"
-                    />
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/transparent"
+                    android:shadowColor="@color/transparent"
+                    android:textColor="@color/red"
+                    android:padding="10dp"
+                    android:textStyle="bold"
+                    android:text="YES" />
 
             </LinearLayout>
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            >
-            <Button
-                android:id="@+id/noBt"
-                android:layout_width="wrap_content"
+
+            <LinearLayout
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:text="no"
-                android:backgroundTint="#4CAF50"
-                />
-        </LinearLayout>
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/noBt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:padding="10dp"
+                    android:text="NO" />
+            </LinearLayout>
         </LinearLayout>
 
 
-    </RelativeLayout>
+    </LinearLayout>
 </androidx.cardview.widget.CardView>

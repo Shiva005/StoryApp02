@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
@@ -142,7 +143,8 @@ public class AllCommentAdapter extends RecyclerView.Adapter {
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         private CircleImageView circleImageView;
-        private MaterialTextView textViewName, textViewDate, textViewComment, textViewDelete;
+        private MaterialTextView textViewName, textViewDate, textViewComment;
+        private ImageView textViewDelete;
 
         public ViewHolder(View itemView) {
             super(itemView);

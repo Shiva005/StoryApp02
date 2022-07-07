@@ -42,6 +42,7 @@ import com.google.gson.JsonObject;
 
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Collections;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -111,7 +112,6 @@ public class DiscoverHomeFragment extends Fragment {
         enchantedViewPager = view.findViewById(R.id.slider_home);
         tabLayout = view.findViewById(R.id.tab_layout);
         tabLayout2 = view.findViewById(R.id.tab_layout2);
-
 
         enchantedViewPager2 = view.findViewById(R.id.slider_home2);
         conSlider = view.findViewById(R.id.con_slider_home);
@@ -307,6 +307,7 @@ public class DiscoverHomeFragment extends Fragment {
 
                                     if (homeRP.getLatestList().size() != 0) {
                                         latestAdapter = new BookHomeAdapter(getActivity(), homeRP.getLatestList(), "home_latest", onClick);
+                                        Collections.shuffle(homeRP.getLatestList());
                                         recyclerViewLatest.setAdapter(latestAdapter);
                                     } else {
                                         conLatest.setVisibility(View.GONE);
@@ -379,6 +380,7 @@ public class DiscoverHomeFragment extends Fragment {
                                             .putExtra("type", type));
                                 }
                             }, section.getAuthorSectionsList(), "");
+                            Collections.shuffle(section.getAuthorSectionsList());
                             recyclerViewHomeSec.setAdapter(adapterHomeSection);
                         }
                     } catch (Exception t) {

@@ -13,13 +13,13 @@
         android:orderInCategory="200"
         android:title="Search"
         android:icon="@drawable/ic_error_outline"
-        app:showAsAction="always"
-        ></item>
-    <item
+        app:showAsAction="always" />
+
+    <!--<item
         android:id="@+id/action_share"
         android:orderInCategory="300"
         android:title="User"
         android:icon="@drawable/ic_share"
-        app:showAsAction="always"/>
+        app:showAsAction="always"/>-->
 
 </menu>

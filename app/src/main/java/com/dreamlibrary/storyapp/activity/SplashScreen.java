@@ -13,7 +13,9 @@ import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.MediaController;
 import android.widget.ProgressBar;
+import android.widget.VideoView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
@@ -46,9 +48,8 @@ import retrofit2.Response;
 public class SplashScreen extends AppCompatActivity {
 
     private Method method;
-    private ProgressBar progressBar;
     private Boolean isCancelled = false;
-    private static int SPLASH_TIME_OUT = 1000;
+    private static int SPLASH_TIME_OUT = 10000;
     private String id = "0", subId = "", type = "", title = "";
     private ImageView splashScreenUI;
 
@@ -84,7 +85,11 @@ public class SplashScreen extends AppCompatActivity {
         splashScreenUI = findViewById(R.id.splash_screen);
         Glide.with(this).load("https://androidphotos.fra1.digitaloceanspaces.com/ebooks/v.2/res/raw/splashscreen_ui.gif").into(splashScreenUI);
 
-        // Making notification bar transparent
+        VideoView v = findViewById(R.id.simpleVideoView);
+
+        v.setVideoURI(Uri.parse("https://androidphotos.fra1.cdn.digitaloceanspaces.com/ebooks/NextStory/NextStoryFlash.mp4"));
+        v.start();
+
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
 
         // making notification bar transparent
@@ -106,9 +111,6 @@ public class SplashScreen extends AppCompatActivity {
                 }
             }
         }
-
-        progressBar = findViewById(R.id.progressBar_splash_screen);
-        progressBar.setVisibility(View.GONE);
 
         // Configure sign-in to request the user's ID, email address, and basic
         // profile. ID and basic profile are included in DEFAULT_SIGN_IN.
@@ -152,8 +154,6 @@ public class SplashScreen extends AppCompatActivity {
     }
 
     public void login(String userId) {
-
-        progressBar.setVisibility(View.VISIBLE);
 
         JsonObject jsObj = (JsonObject) new Gson().toJsonTree(new API(SplashScreen.this));
         jsObj.addProperty("user_id", userId);
@@ -235,15 +235,12 @@ public class SplashScreen extends AppCompatActivity {
                     method.alertBox(getResources().getString(R.string.failed_try_again));
                 }
 
-                progressBar.setVisibility(View.GONE);
-
             }
 
             @Override
             public void onFailure(@NotNull Call<LoginRP> call, @NotNull Throwable t) {
                 // Log error here since request failed
                 Log.e("fail", t.toString());
-                progressBar.setVisibility(View.GONE);
                 method.alertBox(getResources().getString(R.string.failed_try_again));
             }
         });

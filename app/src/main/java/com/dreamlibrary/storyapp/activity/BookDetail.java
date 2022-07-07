@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -20,6 +21,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -33,6 +35,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.multidex.BuildConfig;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -54,6 +57,7 @@ import com.dreamlibrary.storyapp.response.DataRP;
 import com.dreamlibrary.storyapp.response.GetReportRP;
 import com.dreamlibrary.storyapp.response.MyRatingRP;
 import com.dreamlibrary.storyapp.response.RatingRP;
+import com.dreamlibrary.storyapp.response.RemoveContinueBook;
 import com.dreamlibrary.storyapp.response.UserCommentRP;
 import com.dreamlibrary.storyapp.rest.ApiClient;
 import com.dreamlibrary.storyapp.rest.ApiInterface;
@@ -126,8 +130,8 @@ public class BookDetail extends AppCompatActivity {
     private ImageView imageView, imageViewBookCover, imageViewFav, imageViewSend;
     private LinearLayout ratingLayout, llAuthorClick, llTagContainer;
 
-    private TextView imageViewRead;
-    private TextView favText;
+    private TextView imageViewRead,favText;
+    private Button addNewComment;
     private MaterialTextView textViewBookName, textViewAuthor, textViewRating, textViewView, textViewRelViewAll, textViewComment, seeMore, readingStatus;
 
     @Override
@@ -208,6 +212,7 @@ public class BookDetail extends AppCompatActivity {
         llTagContainer = findViewById(R.id.container_tags);
         seeMore = findViewById(R.id.textView_seeMore);
         readingStatus = findViewById(R.id.text_readingStatus);
+        addNewComment = findViewById(R.id.btn_addNewComment);
 
         conMain.setVisibility(View.GONE);
         conNoData.setVisibility(View.GONE);
@@ -226,7 +231,7 @@ public class BookDetail extends AppCompatActivity {
         textViewBookName.setSelected(true);
 
         recyclerViewRelated.setHasFixedSize(true);
-        RecyclerView.LayoutManager layoutManagerRelatedBook = new LinearLayoutManager(BookDetail.this, LinearLayoutManager.HORIZONTAL, false);
+        GridLayoutManager layoutManagerRelatedBook = new GridLayoutManager(BookDetail.this,3, LinearLayoutManager.VERTICAL, false);
         recyclerViewRelated.setLayoutManager(layoutManagerRelatedBook);
         recyclerViewRelated.setFocusable(false);
         recyclerViewRelated.setNestedScrollingEnabled(false);
@@ -260,8 +265,61 @@ public class BookDetail extends AppCompatActivity {
             startActivity(new Intent(BookDetail.this, Author.class)
                     .putExtra("id", bookDetailRP.getAid()));
         });
+        addNewComment.setOnClickListener(v -> {
+            openCommentDialog();
+        });
 
         createNativeAd();
+    }
+
+    private void openCommentDialog() {
+        Dialog dialog = new Dialog(this,R.style.full_screen_dialog);
+        dialog.setContentView(R.layout.dialog_add_new_comment);
+        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        dialog.setCancelable(false);
+        dialog.show();
+
+        //code to put the dialog at the bottom
+        Window window = dialog.getWindow();
+        WindowManager.LayoutParams wlp = window.getAttributes();
+        wlp.gravity = Gravity.BOTTOM;
+        wlp.flags &= ~WindowManager.LayoutParams.FLAG_DIM_BEHIND;
+        window.setAttributes(wlp);
+
+        Button postComment = dialog.findViewById(R.id.btn_postComment);
+        ImageView close = dialog.findViewById(R.id.iv_close);
+        EditText commentArea = dialog.findViewById(R.id.editText_comment_dialog);
+
+        postComment.setOnClickListener(v1 -> {
+            Utils.show(BookDetail.this);
+            if (method.isLogin()) {
+                commentArea.setError(null);
+                String comment = commentArea.getText().toString();
+                if (comment.isEmpty()) {
+                    commentArea.requestFocus();
+                    commentArea.setError(getResources().getString(R.string.please_enter_comment));
+
+                } else {
+                    commentArea.clearFocus();
+                    imm.hideSoftInputFromWindow(commentArea.getWindowToken(), 0);
+
+                    if (method.isNetworkAvailable()) {
+                        Comment(method.userId(), bookDetailRP.getId(), comment);
+                    } else {
+                        method.alertBox(getResources().getString(R.string.internet_connection));
+                    }
+                }
+                Utils.dismiss();
+            } else {
+                Method.loginBack = true;
+                startActivity(new Intent(BookDetail.this, Landingpage.class));
+            }
+            dialog.dismiss();
+        });
+        close.setOnClickListener(v1 -> {
+            dialog.dismiss();
+            Utils.dismiss();
+        });
     }
 
     //For all the native Ads
@@ -473,7 +531,7 @@ public class BookDetail extends AppCompatActivity {
                 if (commentAdapter != null) {
                     commentAdapter.notifyDataSetChanged();
                     String textView_total = getResources().getString(R.string.view_all) + " " + "(" + comment.getTotal_comment() + ")";
-                    textViewComment.setText(textView_total);
+                    //textViewComment.setText(textView_total);
                 }
             }
             if (commentLists.size() == 0) {
@@ -490,7 +548,7 @@ public class BookDetail extends AppCompatActivity {
             if (bookDetailRP.getId().equals(deleteComment.getBookId())) {
                 if (textViewComment != null) {
                     String buttonTotal = getResources().getString(R.string.view_all) + " " + "(" + deleteComment.getTotalComment() + ")";
-                    textViewComment.setText(buttonTotal);
+                    //textViewComment.setText(buttonTotal);
                 }
             }
             if (deleteComment.getType().equals("all_comment")) {
@@ -544,14 +602,14 @@ public class BookDetail extends AppCompatActivity {
                     startActivity(new Intent(BookDetail.this, Landingpage.class));
                 }
                 break;
-            case R.id.action_share:
+            /*case R.id.action_share:
 
                 Intent intent = new Intent(Intent.ACTION_SEND);
                 intent.setType("text/plain");
                 intent.putExtra(Intent.EXTRA_TEXT, "I am reading \"" + bookDetailRP.getBook_title() + "\" on " + getResources().getString(R.string.app_name) + " come & join me at https://play.google.com/store/apps/details?id=" + getApplicationContext().getPackageName());
                 startActivity(Intent.createChooser(intent, getResources().getString(R.string.choose_one)));
 
-                break;
+                break;*/
             default:
                 return super.onOptionsItemSelected(menuItem);
         }
@@ -682,7 +740,7 @@ public class BookDetail extends AppCompatActivity {
                         }
 
                         commentLists.addAll(bookDetailRP.getCommentLists());
-                        textViewComment.setText(getResources().getString(R.string.view_all) + " " + "(" + bookDetailRP.getTotal_comment() + ")");
+                        //textViewComment.setText(getResources().getString(R.string.view_all) + " " + "(" + bookDetailRP.getTotal_comment() + ")");
 
                         //book comment
                         if (commentLists.size() == 0) {
@@ -1064,9 +1122,9 @@ public class BookDetail extends AppCompatActivity {
                         dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
                         dialog.getWindow().setLayout(ConstraintLayout.LayoutParams.MATCH_PARENT, ConstraintLayout.LayoutParams.WRAP_CONTENT);
 
-                        TextInputEditText editText = dialog.findViewById(R.id.editText_report_dialog);
-                        MaterialButton buttonSubmit = dialog.findViewById(R.id.button_submit_review_dialog);
-                        MaterialButton buttonClose = dialog.findViewById(R.id.button_close_review_dialog);
+                        EditText editText = dialog.findViewById(R.id.editText_report_dialog);
+                        TextView buttonSubmit = dialog.findViewById(R.id.button_submit_review_dialog);
+                        TextView buttonClose = dialog.findViewById(R.id.button_close_review_dialog);
 
                         editText.setText(getReportRP.getReport());
 
@@ -1202,7 +1260,7 @@ public class BookDetail extends AppCompatActivity {
                             }
 
                             String buttonTotal = getResources().getString(R.string.view_all) + " " + "(" + userCommentRP.getTotal_comment() + ")";
-                            textViewComment.setText(buttonTotal);
+                            //textViewComment.setText(buttonTotal);
 
                         }
 

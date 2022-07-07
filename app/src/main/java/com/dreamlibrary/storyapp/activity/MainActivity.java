@@ -146,7 +146,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             itemsLibrary.setVisibility(View.VISIBLE);
             mainTitle.setVisibility(View.VISIBLE);
             itemsDiscover.setVisibility(View.GONE);
-            mainTitle.setText("Download list");
+            mainTitle.setText("Download List");
         }
     }
 
@@ -163,7 +163,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         downloads.setOnClickListener(v -> {
             getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout_main, new DownloadFragment(),
                     getResources().getString(R.string.download)).commitAllowingStateLoss();
-            mainTitle.setText("Download list");
+            mainTitle.setText("Download List");
             downloads.setVisibility(View.GONE);
             favourites.setVisibility(View.VISIBLE);
             continueReadings.setVisibility(View.VISIBLE);
@@ -171,7 +171,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         favourites.setOnClickListener(v -> {
             getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout_main, new FavouriteFragment(),
                     getResources().getString(R.string.favorite)).commitAllowingStateLoss();
-            mainTitle.setText("Favourite books list");
+            mainTitle.setText("Favourite Books List");
             downloads.setVisibility(View.VISIBLE);
             favourites.setVisibility(View.GONE);
             continueReadings.setVisibility(View.VISIBLE);
@@ -179,7 +179,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         continueReadings.setOnClickListener(v -> {
             getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout_main, new ContinueFragment(),
                     getResources().getString(R.string.continues)).commitAllowingStateLoss();
-            mainTitle.setText("Your last readings");
+            mainTitle.setText("Your Last Readings");
             downloads.setVisibility(View.VISIBLE);
             favourites.setVisibility(View.VISIBLE);
             continueReadings.setVisibility(View.GONE);
@@ -261,7 +261,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 mainTitle.setVisibility(View.VISIBLE);
                 continueReadings.setVisibility(View.GONE);
                 itemsDiscover.setVisibility(View.GONE);
-                mainTitle.setText("Your last readings");
+                mainTitle.setText("Your Last Readings");
                 return true;
 
             case R.id.discover:

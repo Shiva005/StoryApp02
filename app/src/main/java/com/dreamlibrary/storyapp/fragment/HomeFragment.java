@@ -32,7 +32,7 @@ public class HomeFragment extends Fragment {
 
         //tabLayout.addTab(tabLayout.newTab().setText("Ranking"));
         tabLayout.addTab(tabLayout.newTab().setText("Home"));
-        tabLayout.addTab(tabLayout.newTab().setText("Category"));
+        tabLayout.addTab(tabLayout.newTab().setText("Genre"));
 
         discoverHomeAdapter = new DiscoverHomeAdapter(getChildFragmentManager());
         viewPager.setAdapter(discoverHomeAdapter);

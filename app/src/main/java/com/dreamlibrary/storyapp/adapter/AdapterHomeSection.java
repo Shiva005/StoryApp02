@@ -63,6 +63,7 @@ import com.unity3d.ads.UnityAds;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import retrofit2.Call;
@@ -142,6 +143,7 @@ public class AdapterHomeSection extends RecyclerView.Adapter<AdapterHomeSection.
                     childAuthorSections = new ArrayList<>();
                     childAuthorSections.addAll(mainChildAuthorSection.getChildAuthorSectionList());
 
+                    Collections.shuffle(childAuthorSections);
                     ChildHomeSectionAdapter childAuthorAdapter = new ChildHomeSectionAdapter(childAuthorSections, activity, albumPosition, type);
                     recyclerView.setHasFixedSize(true);
                     recyclerView.setAdapter(childAuthorAdapter);

@@ -41,6 +41,7 @@ import com.google.gson.JsonObject;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import io.github.inflationx.viewpump.ViewPumpContextWrapper;
@@ -309,6 +310,7 @@ public class RelatedBook extends AppCompatActivity {
                                 conNoData.setVisibility(View.VISIBLE);
                             } else {
                                 bookAdapterLV = new BookAdapterLV(RelatedBook.this, bookLists, "related_book", onClick);
+                                Collections.shuffle(bookLists);
                                 recyclerView.setAdapter(bookAdapterLV);
                                 recyclerView.setLayoutAnimation(animation);
                             }
@@ -387,6 +389,7 @@ public class RelatedBook extends AppCompatActivity {
                                 conNoData.setVisibility(View.VISIBLE);
                             } else {
                                 bookAdapterGV = new BookAdapterGV(RelatedBook.this, bookLists, "related_scd", onClick);
+                                Collections.shuffle(bookLists);
                                 recyclerView.setAdapter(bookAdapterGV);
                                 recyclerView.setLayoutAnimation(animation);
                             }

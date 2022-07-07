@@ -66,17 +66,17 @@ public class ProfileFragment extends Fragment {
         lastReading.setOnClickListener(v -> {
             getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout_main, new ContinueFragment(),
                     getResources().getString(R.string.continues)).addToBackStack(getResources().getString(R.string.continue_book)).commitAllowingStateLoss();
-            MainActivity.mainTitle.setText("Your last readings");
+            MainActivity.mainTitle.setText("Your Last Readings");
         });
         downloads.setOnClickListener(v -> {
             getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout_main, new DownloadFragment(),
                     getResources().getString(R.string.download)).addToBackStack(getResources().getString(R.string.download)).commitAllowingStateLoss();
-            MainActivity.mainTitle.setText("Download list");
+            MainActivity.mainTitle.setText("Download List");
         });
         favourites.setOnClickListener(v -> {
             getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout_main, new FavouriteFragment(),
                     getResources().getString(R.string.favorite)).addToBackStack(getResources().getString(R.string.favorite)).commitAllowingStateLoss();
-            MainActivity.mainTitle.setText("Favourite books list");
+            MainActivity.mainTitle.setText("Favourite Books List");
         });
 
         method = new Method(getActivity());

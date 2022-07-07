@@ -74,6 +74,7 @@ import com.unity3d.ads.UnityAds;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import io.github.inflationx.viewpump.ViewPumpContextWrapper;
@@ -723,6 +724,7 @@ public class SearchBook extends AppCompatActivity {
                                 }
                             }
                         }, section.getAuthorSectionsList(), "");
+                        Collections.shuffle(section.getAuthorSectionsList());
                         recyclerView.setAdapter(adapterHomeSection);
                     }
                 } catch (Exception t) {
@@ -787,6 +789,7 @@ public class SearchBook extends AppCompatActivity {
                                 recyclerView.setVisibility(View.VISIBLE);
                                 conNoData.setVisibility(View.GONE);
                                 bookAdapterGV = new BookAdapterGV(SearchBook.this, bookLists, "cat_by_list", onClick);
+                                Collections.shuffle(bookLists);
                                 recyclerView.setAdapter(bookAdapterGV);
                                 recyclerView.setLayoutAnimation(animation);
                             }

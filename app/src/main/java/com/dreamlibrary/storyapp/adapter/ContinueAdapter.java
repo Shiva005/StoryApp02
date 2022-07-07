@@ -11,9 +11,12 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.util.TypedValue;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -132,14 +135,22 @@ public class ContinueAdapter extends RecyclerView.Adapter{
                 DatabaseHandler db = new DatabaseHandler(context);
                 BookList continueLists = bookLists.get(position);
 
-                Dialog dialog = new Dialog(context);
-                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                Dialog dialog = new Dialog(context,R.style.full_screen_dialog);
+                //dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                 dialog.setContentView(R.layout.finish_reading_book_lay);
+                dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
                 dialog.setCancelable(false);
                 dialog.show();
 
-                Button yesBt = dialog.findViewById(R.id.yesBt);
-                Button noBt = dialog.findViewById(R.id.noBt);
+                //code to put the dialog at the bottom
+                Window window = dialog.getWindow();
+                WindowManager.LayoutParams wlp = window.getAttributes();
+                wlp.gravity = Gravity.BOTTOM;
+                wlp.flags &= ~WindowManager.LayoutParams.FLAG_DIM_BEHIND;
+                window.setAttributes(wlp);
+
+                TextView yesBt = dialog.findViewById(R.id.yesBt);
+                TextView noBt = dialog.findViewById(R.id.noBt);
 
                 yesBt.setOnClickListener(v1 -> {
                     Log.e("TAG", "onClick: continue id:  " + continueLists.getId());
