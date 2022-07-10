@@ -23,6 +23,7 @@ import com.dreamlibrary.storyapp.activity.BookDetail;
 import com.dreamlibrary.storyapp.activity.MainActivity;
 import com.dreamlibrary.storyapp.adapter.AdapterHomeSection;
 import com.dreamlibrary.storyapp.adapter.BookHomeAdapter;
+import com.dreamlibrary.storyapp.adapter.HomeCatAdapter;
 import com.dreamlibrary.storyapp.adapter.SliderAdapter;
 import com.dreamlibrary.storyapp.interfaces.OnClick;
 import com.dreamlibrary.storyapp.item.ChildHomeSection;
@@ -60,13 +61,14 @@ public class DiscoverHomeFragment extends Fragment {
     private SliderAdapter sliderAdapter;
     private SliderAdapter sliderAdapter2;
     private BookHomeAdapter latestAdapter;
+    private HomeCatAdapter homeCatAdapter;
     private InputMethodManager imm;
     private EnchantedViewPager enchantedViewPager;
     private EnchantedViewPager enchantedViewPager2;
 
-    private ConstraintLayout conNoData, conSlider, conContinue, conLatest, conHomeSec, conSlider2;
+    private ConstraintLayout conNoData, conSlider, conContinue,conCategory, conLatest, conHomeSec, conSlider2;
     private LinearLayout conMain;
-    private RecyclerView recyclerViewLatest, recyclerViewHomeSec;
+    private RecyclerView recyclerViewLatest, recyclerViewHomeSec,recyclerViewCat;
     private Timer timer;
     private Timer timer2;
     private Boolean isTimerStart = false;
@@ -109,6 +111,7 @@ public class DiscoverHomeFragment extends Fragment {
         method = new Method(getActivity(), onClick);
         conMain = view.findViewById(R.id.con_main_home);
         conNoData = view.findViewById(R.id.con_noDataFound);
+        conCategory = view.findViewById(R.id.con_category_home);
         enchantedViewPager = view.findViewById(R.id.slider_home);
         tabLayout = view.findViewById(R.id.tab_layout);
         tabLayout2 = view.findViewById(R.id.tab_layout2);
@@ -122,6 +125,7 @@ public class DiscoverHomeFragment extends Fragment {
         MaterialTextView textViewLatest = view.findViewById(R.id.textView_latestViewAll_home);
         recyclerViewLatest = view.findViewById(R.id.recyclerView_latest_home);
         recyclerViewHomeSec = view.findViewById(R.id.recyclerView_home_sec_home);
+        recyclerViewCat = view.findViewById(R.id.recyclerView_category_home);
 
         conNoData.setVisibility(View.GONE);
         conMain.setVisibility(View.GONE);
@@ -133,6 +137,11 @@ public class DiscoverHomeFragment extends Fragment {
         GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 1, RecyclerView.VERTICAL, false);
         recyclerViewLatest.setLayoutManager(gridLayoutManager);
         recyclerViewLatest.setFocusable(false);
+
+        recyclerViewCat.setHasFixedSize(true);
+        RecyclerView.LayoutManager layoutManagerCat = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
+        recyclerViewCat.setLayoutManager(layoutManagerCat);
+        recyclerViewCat.setFocusable(false);
 
         recyclerViewHomeSec.setHasFixedSize(true);
         RecyclerView.LayoutManager layoutManagerHomeSec = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
@@ -266,6 +275,12 @@ public class DiscoverHomeFragment extends Fragment {
                                         conSlider.setVisibility(View.GONE);
                                     }
 
+                                    if (homeRP.getCategoryLists().size() != 0) {
+                                        homeCatAdapter = new HomeCatAdapter(getActivity(), homeRP.getCategoryLists(), "home_cat", onClick);
+                                        recyclerViewCat.setAdapter(homeCatAdapter);
+                                    } else {
+                                        conCategory.setVisibility(View.GONE);
+                                    }
 
                                     if (homeRP.getSecondSliderLists().size() != 0) {
 

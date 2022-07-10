@@ -1,54 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:gravity="center"
-    android:padding="1dp"
-    android:id="@+id/container"
-    android:orientation="vertical">
-
+    android:orientation="vertical"
+    android:padding="1dp">
 
     <LinearLayout
         android:id="@+id/layBack"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
         android:layout_margin="5dp"
         android:background="@drawable/white_bg"
-        android:padding="5dp"
-        android:orientation="horizontal">
-
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="5dp">
 
         <com.folioreader.util.StyleableTextView
             android:id="@+id/section_title"
             android:layout_width="match_parent"
-            android:layout_weight="1"
-            android:paddingVertical="5dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:gravity="center_vertical"
-            android:text="sdgfbgndfsgdefgfdsbgfddgfdgbfdvxfdvcscvsdvasdvsdfvrdsdvcxsdasfddsfddfsddsf"
+            android:paddingVertical="5dp"
+            android:text="Story Title"
             app:folio_font="SanFranciscoText-Regular.otf" />
 
         <ImageView
-android:id="@+id/imgAds"
+            android:id="@+id/imgAds"
             android:layout_width="25dp"
-            android:src="@drawable/video_camera"
             android:layout_height="25dp"
-            android:padding="2dp" />
+            android:padding="2dp"
+            android:src="@drawable/video_camera"
+            android:visibility="gone" />
 
         <ImageView
             android:id="@+id/children"
             android:layout_width="25dp"
-            android:src="@drawable/video_camera"
-            android:visibility="gone"
             android:layout_height="25dp"
-            android:padding="2dp" />
+            android:padding="2dp"
+            android:src="@drawable/video_camera"
+            android:visibility="gone" />
     </LinearLayout>
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="1dp" android:background="@color/grey_color"/>
-
+        android:layout_height="1dp"
+        android:background="@color/borders" />
 
 </LinearLayout>

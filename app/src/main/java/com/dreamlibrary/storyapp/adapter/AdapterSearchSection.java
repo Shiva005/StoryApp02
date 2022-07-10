@@ -250,7 +250,7 @@ public class AdapterSearchSection extends RecyclerView.Adapter<AdapterSearchSect
             authorName = authorName + subCategoryLists.get(position).getAuthorArrayList().get(i).getAuthorName() + ", ";
         }*/
 
-            holder.textViewAuthor.setText(activity.getString(R.string.by) + "\u0020" + childHomeSections.get(position).getAuthorName());
+            holder.textViewAuthor.setText(childHomeSections.get(position).getAuthorName());
             holder.textViewDescription.setText(Html.fromHtml(childHomeSections.get(position).getBookDescription()));
 
             holder.textViewRatingCount.setText(childHomeSections.get(position).getTotalRate());

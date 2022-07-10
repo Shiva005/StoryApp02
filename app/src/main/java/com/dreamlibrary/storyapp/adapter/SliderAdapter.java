@@ -103,7 +103,7 @@ public class SliderAdapter extends PagerAdapter {
             }
 
 
-            textView_author.setText(activity.getString(R.string.by) + "\u0020" + method.getAuthorFormatted(authorName));
+            textView_author.setText(method.getAuthorFormatted(authorName));
             textView_ratingView.setText(sliderLists.get(position).getTotal_rate());
 
             cardView.setOnClickListener(v -> {

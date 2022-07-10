@@ -1523,6 +1523,7 @@ id transition_scene_layoutid_cache
 id transition_transform
 id tvDecries
 id tvIncrease
+id tvNumChapters
 id tvSize
 id tvTitle
 id tv_def

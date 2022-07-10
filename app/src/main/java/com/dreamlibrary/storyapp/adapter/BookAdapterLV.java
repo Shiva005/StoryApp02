@@ -112,7 +112,7 @@ public class BookAdapterLV extends RecyclerView.Adapter {
                 }
             }
 
-            viewHolder.textViewAuthor.setText(activity.getString(R.string.by) + "\u0020" + method.getAuthorFormatted(authorName));
+            viewHolder.textViewAuthor.setText(method.getAuthorFormatted(authorName));
             viewHolder.textViewRatingCount.setText(bookLists.get(position).getRate_avg());
             //viewHolder.textViewRatingCount.setText(bookLists.get(position).getTotal_rate());
             viewHolder.textViewViewCount.setText(Method.Format(Integer.parseInt(bookLists.get(position).getBook_views())));

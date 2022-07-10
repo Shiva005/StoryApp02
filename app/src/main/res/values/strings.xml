@@ -108,7 +108,7 @@
 
     <string name="items_capital">Items</string>
     <string name="items">items</string>
-    <string name="by">By</string>
+    <string name="by"></string>
     <string name="number">0</string>
 
     <string name="description">Description</string>

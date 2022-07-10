@@ -57,7 +57,7 @@ public class HomeCategoryAdapter extends RecyclerView.Adapter<HomeCategoryAdapte
             }
         }
 
-        holder.textViewAuthor.setText(activity.getString(R.string.by) + "\u0020" + method.getAuthorFormatted(authorName));
+        holder.textViewAuthor.setText(method.getAuthorFormatted(authorName));
 
 
 //        holder.textViewRatingCount.setText(subCategoryLists.get(position).getTotal_rate());

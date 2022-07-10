@@ -1522,6 +1522,7 @@ int id transition_scene_layoutid_cache 0x0
 int id transition_transform 0x0
 int id tvDecries 0x0
 int id tvIncrease 0x0
+int id tvNumChapters 0x0
 int id tvSize 0x0
 int id tvTitle 0x0
 int id tv_def 0x0

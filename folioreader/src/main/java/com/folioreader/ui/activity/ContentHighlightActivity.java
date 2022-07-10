@@ -8,6 +8,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentTransaction;
@@ -17,6 +19,7 @@ import com.folioreader.Config;
 import com.folioreader.Constants;
 import com.folioreader.FolioReader;
 import com.folioreader.R;
+import com.folioreader.ui.adapter.TOCAdapter;
 import com.folioreader.ui.fragment.HighlightFragment;
 import com.folioreader.ui.fragment.TableOfContentFragment;
 import com.folioreader.util.AppUtil;
@@ -54,6 +57,7 @@ public class ContentHighlightActivity extends AppCompatActivity {
 
 
         Log.e("photo-->>" , ContentHighlightActivity.bookCover + "<>");
+
         Glide.with(this)
                 .load(ContentHighlightActivity.bookCover)
                 .into(((ImageView) findViewById(R.id.imgCover)));
@@ -138,4 +142,7 @@ public class ContentHighlightActivity extends AppCompatActivity {
         ft.commit();
     }
 
+    public void chapterMethod(int chapter){
+        ((TextView)findViewById(R.id.tvNumChapters)).setText(chapter+ " Chapters");
+    }
 }

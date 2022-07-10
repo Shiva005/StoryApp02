@@ -12,22 +12,19 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.folioreader.Config;
 import com.folioreader.R;
 import com.folioreader.model.TOCLinkWrapper;
+import com.folioreader.ui.activity.ContentHighlightActivity;
 import com.folioreader.util.MultiLevelExpIndListAdapter;
 import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.FullScreenContentCallback;
 import com.google.android.gms.ads.LoadAdError;
 import com.google.android.gms.ads.interstitial.InterstitialAd;
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
 
 import java.util.ArrayList;
-
-import kotlin.reflect.jvm.internal.impl.load.java.Constant;
 
 /**
  * Created by mahavir on 3/10/17.
@@ -37,36 +34,38 @@ public class TOCAdapter extends MultiLevelExpIndListAdapter {
 
     private static final int LEVEL_ONE_PADDING_PIXEL = 15;
     private static final int freePersantage = 70;
-    private static  int perValue = 0;
+    private static int perValue = 0;
+    private static int totalSize = 0;
 
     private TOCCallback callback;
     private final Context mContext;
     private String selectedHref;
     private Config mConfig;
-    public static int selectedPos  =0;
+    public static int selectedPos = 0;
 
     ArrayList<TOCLinkWrapper> tocLinkWrapperss;
 
     InterstitialAd interstitialAd = null;
-   void  loadAds(){
 
-       AdRequest adRequest = new AdRequest.Builder()
-               .build();
+    void loadAds() {
 
-       InterstitialAd.load(((Activity)mContext), mContext.getResources().getString(R.string.interstitialAds), adRequest, new InterstitialAdLoadCallback() {
-           @Override
-           public void onAdLoaded(@NonNull InterstitialAd interstitialAds) {
-               interstitialAd = interstitialAds;
+        AdRequest adRequest = new AdRequest.Builder()
+                .build();
 
-           }
+        InterstitialAd.load(((Activity) mContext), mContext.getResources().getString(R.string.interstitialAds), adRequest, new InterstitialAdLoadCallback() {
+            @Override
+            public void onAdLoaded(@NonNull InterstitialAd interstitialAds) {
+                interstitialAd = interstitialAds;
 
-           @Override
-           public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
-               // Handle the error
-               }
-       });
+            }
 
-   }
+            @Override
+            public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
+                // Handle the error
+            }
+        });
+
+    }
 
     public TOCAdapter(Context context, ArrayList<TOCLinkWrapper> tocLinkWrappers,
                       String selectedHref, Config config) {
@@ -75,10 +74,7 @@ public class TOCAdapter extends MultiLevelExpIndListAdapter {
         mContext = context;
         this.selectedHref = selectedHref;
         this.mConfig = config;
-
-
-
-        perValue = (tocLinkWrapperss.size() * freePersantage) /100;
+        perValue = (tocLinkWrapperss.size() * freePersantage) / 100;
         loadAds();
     }
 
@@ -103,6 +99,11 @@ public class TOCAdapter extends MultiLevelExpIndListAdapter {
             viewHolder.children.setVisibility(View.VISIBLE);
         }
         viewHolder.sectionTitle.setText(tocLinkWrapper.getTocLink().getTitle());
+
+
+        if (mContext instanceof ContentHighlightActivity) {
+            ((ContentHighlightActivity) mContext).chapterMethod(tocLinkWrapperss.size());
+        }
 
         if (mConfig.isNightMode()) {
             if (tocLinkWrapper.isGroup()) {
@@ -177,11 +178,9 @@ public class TOCAdapter extends MultiLevelExpIndListAdapter {
         }
 
 
-
-        if (position > perValue){
+        if (position > perValue) {
             viewHolder.imgAds.setImageDrawable(mContext.getResources().getDrawable(R.drawable.ads));
-        }
-        else{
+        } else {
             viewHolder.imgAds.setImageDrawable(mContext.getResources().getDrawable(R.drawable.video_camera));
 
         }
@@ -195,7 +194,7 @@ public class TOCAdapter extends MultiLevelExpIndListAdapter {
     }
 
     public class TOCRowViewHolder extends RecyclerView.ViewHolder {
-        public ImageView children,imgAds;
+        public ImageView children, imgAds;
         TextView sectionTitle;
         private LinearLayout container, layBack;
         private View view;
@@ -221,18 +220,16 @@ public class TOCAdapter extends MultiLevelExpIndListAdapter {
                 public void onClick(View v) {
                     selectedPos = getAdapterPosition();
 
-                    if (getAdapterPosition() > perValue){
+                    if (getAdapterPosition() > perValue) {
 
-                        if (interstitialAd != null){
-                            interstitialAd.show(((Activity)mContext));
+                        if (interstitialAd != null) {
+                            interstitialAd.show(((Activity) mContext));
+                            if (callback != null) callback.onTocClicked(getAdapterPosition());
+                        } else {
                             if (callback != null) callback.onTocClicked(getAdapterPosition());
                         }
-                        else{
-                            if (callback != null) callback.onTocClicked(getAdapterPosition());
-                        }
 
-                    }
-                    else{
+                    } else {
                         if (callback != null) callback.onTocClicked(getAdapterPosition());
 
                     }

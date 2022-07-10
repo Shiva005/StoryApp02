@@ -232,8 +232,20 @@
         <entry key="..\:/StoryApp/app/src/main/res/menu/bottom_menu.xml" value="0.17864583333333334" />
         <entry key="..\:/StoryApp/app/src/main/res/menu/menu_book_details.xml" value="0.22" />
         <entry key="..\:/StoryApp/app/src/main/res/menu/menu_bottom_library.xml" value="0.16" />
+        <entry key="..\:/StoryApp/folioreader/res/layout/activity_content_highlight.xml" value="0.16" />
         <entry key="..\:/StoryApp/folioreader/res/layout/dialog_edit_notes.xml" value="0.17864583333333334" />
+        <entry key="..\:/StoryApp/folioreader/res/layout/folio_activity.xml" value="0.18" />
+        <entry key="..\:/StoryApp/folioreader/res/layout/fragment_contents.xml" value="0.17864583333333334" />
+        <entry key="..\:/StoryApp/folioreader/res/layout/fragment_highlight_list.xml" value="0.17864583333333334" />
+        <entry key="..\:/StoryApp/folioreader/res/layout/horiz_separator.xml" value="0.17864583333333334" />
+        <entry key="..\:/StoryApp/folioreader/res/layout/item_dictionary.xml" value="0.17864583333333334" />
+        <entry key="..\:/StoryApp/folioreader/res/layout/item_search_empty.xml" value="0.17864583333333334" />
+        <entry key="..\:/StoryApp/folioreader/res/layout/item_search_failure.xml" value="0.17864583333333334" />
+        <entry key="..\:/StoryApp/folioreader/res/layout/item_search_init.xml" value="0.17864583333333334" />
+        <entry key="..\:/StoryApp/folioreader/res/layout/item_search_loading.xml" value="0.17864583333333334" />
+        <entry key="..\:/StoryApp/folioreader/res/layout/item_search_normal.xml" value="0.17864583333333334" />
         <entry key="..\:/StoryApp/folioreader/res/layout/row_highlight.xml" value="0.17864583333333334" />
+        <entry key="..\:/StoryApp/folioreader/res/layout/row_table_of_contents.xml" value="0.2" />
         <entry key="..\:/project/client/AbhijitFriend/Ebook/ManyBooks/ManyBooks/app/src/main/res/drawable-hdpi/book_bg.xml" value="0.20185185185185187" />
         <entry key="..\:/project/client/AbhijitFriend/Ebook/ManyBooks/ManyBooks/app/src/main/res/drawable-hdpi/grey_button.xml" value="0.20185185185185187" />
         <entry key="..\:/project/client/AbhijitFriend/Ebook/ManyBooks/ManyBooks/app/src/main/res/drawable-mdpi/setting_button.xml" value="0.20512820512820512" />

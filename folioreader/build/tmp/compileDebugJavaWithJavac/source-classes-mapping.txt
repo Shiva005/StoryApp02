@@ -85,12 +85,8 @@ com/folioreader/model/dictionary/Audio.java
  com.folioreader.model.dictionary.Audio
 com/folioreader/util/FileUtil.java
  com.folioreader.util.FileUtil
-com/folioreader/ui/activity/ContentHighlightActivity.java
- com.folioreader.ui.activity.ContentHighlightActivity
- com.folioreader.ui.activity.ContentHighlightActivity$1
- com.folioreader.ui.activity.ContentHighlightActivity$2
- com.folioreader.ui.activity.ContentHighlightActivity$3
- com.folioreader.ui.activity.ContentHighlightActivity$4
+com/folioreader/BuildConfig.java
+ com.folioreader.BuildConfig
 com/folioreader/ui/view/UnderlinedTextView.java
  com.folioreader.ui.view.UnderlinedTextView
 com/folioreader/model/event/ReloadDataEvent.java
@@ -99,13 +95,8 @@ com/folioreader/network/TLSSocketFactory.java
  com.folioreader.network.TLSSocketFactory
 com/folioreader/model/dictionary/DictionaryResults.java
  com.folioreader.model.dictionary.DictionaryResults
-com/folioreader/ui/adapter/TOCAdapter.java
- com.folioreader.ui.adapter.TOCAdapter
- com.folioreader.ui.adapter.TOCAdapter$1
- com.folioreader.ui.adapter.TOCAdapter$TOCCallback
- com.folioreader.ui.adapter.TOCAdapter$TOCRowViewHolder
- com.folioreader.ui.adapter.TOCAdapter$TOCRowViewHolder$1
- com.folioreader.ui.adapter.TOCAdapter$TOCRowViewHolder$2
+com/folioreader/AppContext.java
+ com.folioreader.AppContext
 com/folioreader/ui/fragment/DictionaryFragment.java
  com.folioreader.ui.fragment.DictionaryFragment
  com.folioreader.ui.fragment.DictionaryFragment$1
@@ -203,7 +194,16 @@ com/folioreader/ui/base/HtmlTaskCallback.java
  com.folioreader.ui.base.HtmlTaskCallback
 com/folioreader/util/StyleableTextView.java
  com.folioreader.util.StyleableTextView
-com/folioreader/BuildConfig.java
- com.folioreader.BuildConfig
-com/folioreader/AppContext.java
- com.folioreader.AppContext
+com/folioreader/ui/adapter/TOCAdapter.java
+ com.folioreader.ui.adapter.TOCAdapter
+ com.folioreader.ui.adapter.TOCAdapter$1
+ com.folioreader.ui.adapter.TOCAdapter$TOCCallback
+ com.folioreader.ui.adapter.TOCAdapter$TOCRowViewHolder
+ com.folioreader.ui.adapter.TOCAdapter$TOCRowViewHolder$1
+ com.folioreader.ui.adapter.TOCAdapter$TOCRowViewHolder$2
+com/folioreader/ui/activity/ContentHighlightActivity.java
+ com.folioreader.ui.activity.ContentHighlightActivity
+ com.folioreader.ui.activity.ContentHighlightActivity$1
+ com.folioreader.ui.activity.ContentHighlightActivity$2
+ com.folioreader.ui.activity.ContentHighlightActivity$3
+ com.folioreader.ui.activity.ContentHighlightActivity$4

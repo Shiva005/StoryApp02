@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
@@ -76,6 +77,7 @@ public class HomeCatAdapter extends RecyclerView.Adapter<HomeCatAdapter.ViewHold
 
 
         holder.cardView.setOnClickListener(v -> {
+            Toast.makeText(activity, ""+categoryLists.get(position).getSub_cat_status(), Toast.LENGTH_SHORT).show();
             method.onClickAd(position, type, categoryLists.get(position).getCid(), "0", categoryLists.get(position).getCategory_name(), "", "", categoryLists.get(position).getSub_cat_status());
         });
 
